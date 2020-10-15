@@ -7,11 +7,13 @@ use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Lumen\Auth\Authorizable;
+use Illuminate\Support\Str;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
-    use Authenticatable, Authorizable, HasFactory;
+    use Authenticatable, Authorizable, HasFactory, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +21,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var array
      */
     protected $fillable = [
-        'name', 'email',
+        'username', 'email', 'isCreator', 'avatar', 'birthDate', 'name', 'surname', 'dni', 'isAdmin', 'isVerified',
     ];
 
     /**
@@ -28,6 +30,47 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var array
      */
     protected $hidden = [
-        'password',
+        'password', '', 'email', 'verificationToken', 'remember_token'
     ];
+
+    protected $dates = ["deleted_at"];
+
+    protected $table = "user";
+
+    public static function generateVerificationCode()
+    {
+        return Str::random(40);
+    }
+
+    public function setNameAttribute($name)
+    {
+        $this->attributes["name"] = strtolower($name);
+    }
+    public function getNameAttribute($name)
+    {
+        return ucwords($name);
+    }
+    public function setSurnameAttribute($surname)
+    {
+        $this->attributes["surname"] = strtolower($surname);
+    }
+    public function getSurnameAttribute($surname)
+    {
+        return ucwords($surname);
+    }
+
+    public function setEmailAttribute($email)
+    {
+        $this->attributes["email"] = strtolower($email);
+    }
+
+    public function isVerified()
+    {
+        return $this->verified == true;
+    }
+
+    public function isAdmin()
+    {
+        return $this->admin == true;
+    }
 }
