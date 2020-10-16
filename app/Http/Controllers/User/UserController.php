@@ -45,7 +45,8 @@ class UserController extends ApiController
 
     public function delete(User $user)
     {
-        //
+        User::findOrFail($user)->delete();
+        return response('Deleted Successfully', 200);
     }
     //
 }
