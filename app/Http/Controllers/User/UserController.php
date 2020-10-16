@@ -22,6 +22,8 @@ class UserController extends ApiController
     {
         $users = User::all();
         return $this->showAll($users);
+
+        //return response()->json(User::all());
     }
 
     public function show(User $user)
@@ -31,7 +33,9 @@ class UserController extends ApiController
 
     public function store(Request $request)
     {
+        $user = User::create($request->all());
 
+        return response()->json($user, 201);
     }
 
     public function update(Request $request, User $user)

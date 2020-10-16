@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\User\UserController;
+
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
@@ -13,6 +15,23 @@
 |
 */
 
-$router->get('/', function () use ($router) {
+$router->post('/', function () use ($router) {
     return $router->app->version();
+    
 });
+
+
+
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+    
+    //$router->get('users',  ['uses' => 'UserController@index']);
+  
+    //$router->get('users/{id}', ['uses' => 'AuthorController@show']);
+  
+    $router->post('users', ['uses' => 'UserController@store']);
+  
+    //$router->delete('users/{id}', ['uses' => 'AuthorController@delete']);
+  
+    //$router->put('users/{id}', ['uses' => 'AuthorController@update']);
+  });
