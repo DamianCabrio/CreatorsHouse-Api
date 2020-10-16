@@ -15,7 +15,7 @@ use App\Http\Controllers\User\UserController;
 |
 */
 
-$router->post('/', function () use ($router) {
+$router->get('/', function () use ($router) {
     return $router->app->version();
     
 });
@@ -25,9 +25,9 @@ $router->post('/', function () use ($router) {
 
 $router->group(['prefix' => 'api'], function () use ($router) {
     
-    //$router->get('users',  ['uses' => 'UserController@index']);
+    $router->get('users',  ['uses' => 'UserController@index']);
   
-    //$router->get('users/{id}', ['uses' => 'AuthorController@show']);
+    $router->get('users/{id}', ['uses' => 'UserController@show']);
   
     $router->post('users', ['uses' => 'UserController@store']);
   
