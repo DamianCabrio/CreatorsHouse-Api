@@ -26,7 +26,7 @@ class UserController extends ApiController
 
     public function show(User $user)
     {
-        return $this->showOne(User::find($user));
+        return $this->showOne($user);
     }
 
     public function store(Request $request)
