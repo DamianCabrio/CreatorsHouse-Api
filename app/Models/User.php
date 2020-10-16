@@ -8,8 +8,8 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Lumen\Auth\Authorizable;
 use Illuminate\Support\Str;
+use Laravel\Lumen\Auth\Authorizable;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
@@ -46,14 +46,17 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         $this->attributes["name"] = strtolower($name);
     }
+
     public function getNameAttribute($name)
     {
         return ucwords($name);
     }
+
     public function setSurnameAttribute($surname)
     {
         $this->attributes["surname"] = strtolower($surname);
     }
+
     public function getSurnameAttribute($surname)
     {
         return ucwords($surname);

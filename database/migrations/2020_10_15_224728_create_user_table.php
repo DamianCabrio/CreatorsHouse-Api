@@ -30,7 +30,7 @@ class CreateUserTable extends Migration
             $table->string('verificationToken');
             $table->boolean('isVerified')->default(false);
             $table->rememberToken();
-            
+
         });
     }
 
