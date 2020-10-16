@@ -22,20 +22,18 @@ class UserController extends ApiController
     {
         $users = User::all();
         return $this->showAll($users);
-
-        //return response()->json(User::all());
     }
 
     public function show(User $user)
     {
-        return response()->json(User::find($user));
+        return $this->showOne(User::find($user));
     }
 
     public function store(Request $request)
     {
         $user = User::create($request->all());
 
-        return response()->json($user, 201);
+        return $this->showOne($user, 201);
     }
 
     public function update(Request $request, User $user)
@@ -46,7 +44,7 @@ class UserController extends ApiController
     public function delete(User $user)
     {
         User::findOrFail($user)->delete();
-        return response('Deleted Successfully', 200);
+        return $this->showMessage('Deleted Successfully');
     }
     //
 }
