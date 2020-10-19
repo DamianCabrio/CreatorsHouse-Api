@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\UserController;
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
@@ -25,11 +25,11 @@ $router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($ro
 
     $router->get('users', ['uses' => 'UserController@index']);
 
-    $router->get('users/{id}', ['uses' => 'UserController@show']);
+    $router->get('/users/{id}', ['uses' => 'UserController@show']);
 
     $router->post('users', ['uses' => 'UserController@store']);
 
-    //$router->delete('users/{id}', ['uses' => 'AuthorController@delete']);
+    $router->delete('users/{id}', ['uses' => 'UserController@delete']);
 
-    //$router->put('users/{id}', ['uses' => 'AuthorController@update']);
+    $router->put('users/{id}', ['uses' => 'UserController@update']);
 });

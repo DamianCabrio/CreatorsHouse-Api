@@ -30,7 +30,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var array
      */
     protected $hidden = [
-        'password', '', 'email', 'verificationToken', 'remember_token'
+        'password', 'email', 'verificationToken', 'remember_token'
     ];
 
     protected $dates = ["deleted_at"];

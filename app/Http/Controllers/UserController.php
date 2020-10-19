@@ -23,8 +23,9 @@ class UserController extends ApiController
         return $this->showAll($users);
     }
 
-    public function show(User $user)
+    public function show($id)
     {
+        $user = User::findOrFail($id);
         return $this->showOne($user);
     }
 
@@ -47,14 +48,15 @@ class UserController extends ApiController
         return $this->showOne($user, 201);
     }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
         //
     }
 
 
-    public function delete(User $user)
+    public function delete($id)
     {
+        $user = User::findOrFail($id);
         $user->delete();
         return $this->showOne($user);
     }
