@@ -17,18 +17,18 @@ class CreateUserTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('username')->unique();
-            $table->string('password');
-            $table->string('email')->unique();
-            $table->boolean('isCreator')->default(false);
-            $table->string('avatar');
-            $table->date('birthDate');
             $table->string('name');
             $table->string('surname');
+            $table->string('email')->unique();
+            $table->string('avatar');
+            $table->date('birthDate');
             $table->unsignedInteger('dni');
+            $table->string('password');
+            $table->boolean('isCreator')->default(false);
             $table->boolean('isAdmin')->default(false);
-            $table->softDeletes();
             $table->string('verificationToken')->nullable();
             $table->boolean('isVerified')->default(false);
+            $table->softDeletes();
             $table->rememberToken();
 
         });

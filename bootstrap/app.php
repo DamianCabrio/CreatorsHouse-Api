@@ -106,6 +106,8 @@ $app->configure('app');
 |
 */
 
+$app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
+
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
