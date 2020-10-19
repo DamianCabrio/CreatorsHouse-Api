@@ -11,17 +11,20 @@ trait ApiResponser
     {
         return response()->json(["error" => $message, "code" => $code], $code);
     }
-
+    
+    //Devuelve la coleccion completa
     protected function showAll(Collection $collection, $code = 200)
     {
         return $this->successResponse($collection, $code);
     }
+
 
     private function successResponse($data, $code)
     {
         return response()->json($data, $code);
     }
 
+    //Devuelve una instancia
     protected function showOne(Model $instance, $code = 200)
     {
         return $this->successResponse([$instance], $code);

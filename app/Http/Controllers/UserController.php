@@ -53,6 +53,7 @@ class UserController extends ApiController
         //
     }
 
+    
     public function delete(User $user)
     {
         $user->delete();
