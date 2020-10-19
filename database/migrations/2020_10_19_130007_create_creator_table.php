@@ -16,6 +16,8 @@ class CreateCreatorTable extends Migration
         Schema::create('creator', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
+            $table->rememberToken();
         });
     }
 

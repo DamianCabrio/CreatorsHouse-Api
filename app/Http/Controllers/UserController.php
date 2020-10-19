@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\ApiController;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -33,15 +32,15 @@ class UserController extends ApiController
     {
         //validación de datos
         $this->validate($request,
-        [   //nickname es requerido
-            'username'=>'required|max:10',
-            //el email es requerido, tiene formato de email y es unico
-            'email'=>'required|email|unique:user',
-            //el email es requerido, tiene formato de email y es unico
-            'password'=>'required|min:8',
-            //avatar
-            'avatar' => 'mimes:jpeg,bmp,png'
-        ]);
+            [   //nickname es requerido
+                'username' => 'required|max:10',
+                //el email es requerido, tiene formato de email y es unico
+                'email' => 'required|email|unique:user',
+                //el email es requerido, tiene formato de email y es unico
+                'password' => 'required|min:8',
+                //avatar
+                'avatar' => 'mimes:jpeg,bmp,png'
+            ]);
 
         $user = User::create($request->all());
 
@@ -53,7 +52,7 @@ class UserController extends ApiController
         //
     }
 
-    
+
     public function delete(User $user)
     {
         $user->delete();
