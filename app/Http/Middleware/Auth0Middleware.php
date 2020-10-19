@@ -33,7 +33,7 @@ class Auth0Middleware
     public function validateToken($token)
     {
         try {
-            $jwksUri = env('AUTH0_DOMAIN') . '.well-known/jwks.json';
+            $jwksUri = env('AUTH0_DOMAIN'). '.well-known/jwks.json';
             $jwksFetcher = new JWKFetcher(null, [ 'base_uri' => $jwksUri ]);
             $signatureVerifier = new AsymmetricVerifier($jwksFetcher);
             $tokenVerifier = new TokenVerifier(env('AUTH0_DOMAIN'), env('AUTH0_AUD'), $signatureVerifier);
