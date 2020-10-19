@@ -17,19 +17,19 @@ use App\Http\Controllers\User\UserController;
 
 $router->get('/', function () use ($router) {
     return $router->app->version();
-    
+
 });
 
 
 $router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($router) {
-    
-    $router->get('users',  ['uses' => 'UserController@index']);
-  
+
+    $router->get('users', ['uses' => 'UserController@index']);
+
     $router->get('users/{id}', ['uses' => 'UserController@show']);
-  
+
     $router->post('users', ['uses' => 'UserController@store']);
-  
+
     //$router->delete('users/{id}', ['uses' => 'AuthorController@delete']);
-  
+
     //$router->put('users/{id}', ['uses' => 'AuthorController@update']);
-  });
+});
