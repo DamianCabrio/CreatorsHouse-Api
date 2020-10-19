@@ -14,7 +14,7 @@ trait ApiResponser
 
     protected function showAll(Collection $collection, $code = 200)
     {
-        return $this->successResponse([$collection], $code);
+        return $this->successResponse($collection, $code);
     }
 
     private function successResponse($data, $code)

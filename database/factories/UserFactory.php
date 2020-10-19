@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class UserFactory extends Factory
 {
@@ -22,8 +23,19 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
+            'username' => $this->faker->unique()->word,
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'email' => $this->faker->unique()->safeEmail,
+            "isCreator" => $this->faker->randomElement([0,1]),
+            "avatar" => $this->faker->randomElement(["ElSaurio.jpg","Norbert.jpg","Laura.jpg"]),
+            "birthDate" => $this->faker->date("Y-m-d","2002-10-19"),
+            "name" => $this->faker->firstName(),
+            "surname" => $this->faker->lastName,
+            "dni" => $this->faker->randomNumber(8),
+            "isAdmin" => $this->faker->randomElement([0,1]),
+            "isVerified" => $isVerified = $this->faker->randomElement([0,1]),
+            "verificationToken" => $isVerified == 1 ? null : User::generateVerificationCode(),
+            'remember_token' => Str::random(10),
         ];
     }
 }

@@ -27,7 +27,7 @@ class CreateUserTable extends Migration
             $table->unsignedInteger('dni');
             $table->boolean('isAdmin')->default(false);
             $table->softDeletes();
-            $table->string('verificationToken');
+            $table->string('verificationToken')->nullable();
             $table->boolean('isVerified')->default(false);
             $table->rememberToken();
 
