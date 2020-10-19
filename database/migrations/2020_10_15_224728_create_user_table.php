@@ -17,12 +17,12 @@ class CreateUserTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('username')->unique();
-            $table->string('name');
-            $table->string('surname');
+            $table->string('name')->nullable();
+            $table->string('surname')->nullable();
             $table->string('email')->unique();
-            $table->string('avatar');
+            $table->string('avatar')->nullable();
             $table->date('birthDate');
-            $table->unsignedInteger('dni');
+            $table->unsignedInteger('dni')->nullable();
             $table->string('password');
             $table->boolean('isCreator')->default(false);
             $table->boolean('isAdmin')->default(false);
