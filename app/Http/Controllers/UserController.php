@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\ApiResponser;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class UserController extends ApiController
+class UserController extends Controller
 {
+    use ApiResponser;
+
     /**
      * Create a new controller instance.
      *
@@ -20,13 +23,13 @@ class UserController extends ApiController
     public function index()
     {
         $users = User::all();
-        return $this->showAll($users);
+        return $this->successResponse($users);
     }
 
     public function show($id)
     {
         $user = User::findOrFail($id);
-        return $this->showOne($user);
+        return $this->successResponse($user);
     }
 
     public function store(Request $request)
@@ -45,7 +48,7 @@ class UserController extends ApiController
 
         $user = User::create($request->all());
 
-        return $this->showOne($user, 201);
+        return $this->successResponse($user, 201);
     }
 
     public function update(Request $request, $id)
@@ -58,7 +61,7 @@ class UserController extends ApiController
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return $this->showOne($user);
+        return $this->successResponse($user);
     }
     //
 }
