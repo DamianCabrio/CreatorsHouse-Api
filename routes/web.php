@@ -29,7 +29,9 @@ $router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($ro
 
     $router->post('users', ['uses' => 'UserController@store']);
 
-    $router->delete('users/{id}', ['uses' => 'UserController@delete']);
-
     $router->put('users/{id}', ['uses' => 'UserController@update']);
+
+    $router->patch('users/{id}', ['uses' => 'UserController@update']);
+
+    $router->delete('users/{id}', ['uses' => 'UserController@delete']);
 });
