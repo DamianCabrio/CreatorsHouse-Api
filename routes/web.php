@@ -14,11 +14,12 @@ use App\Http\Controllers\UserController;
 | and give it the Closure to call when that URI is requested.
 |
 */
+$router->get('/users/{id}', ['uses' => 'UserController@show']);
 
 $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'],function () use ($router){
     $router->get('users', ['uses' => 'UserController@index']);
 
-    $router->get('/users/{id}', ['uses' => 'UserController@show']);
+   // $router->get('/users/{id}', ['uses' => 'UserController@show']);
 
     $router->post('users', ['uses' => 'UserController@store']);
 
