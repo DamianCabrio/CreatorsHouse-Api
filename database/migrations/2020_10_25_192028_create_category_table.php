@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCreatorTable extends Migration
+class CreateCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,12 @@ class CreateCreatorTable extends Migration
      */
     public function up()
     {
-        Schema::create('creator', function (Blueprint $table) {
+        Schema::create('category', function (Blueprint $table) {
             $table->id();
-            $table->string("banner");
+            $table->string("nameCategory");
             $table->string("description");
-            $table->string("instagram");
-            $table->string("youtube");
-            $table->float("costVip");
-            $table->string("emailMercadoPago");
-            $table->foreignId("idUser");
             $table->timestamps();
             $table->softDeletes();
-            $table->rememberToken();
-
-            $table->foreign("idUser")->references("id")->on("user");
         });
     }
 
@@ -37,6 +29,6 @@ class CreateCreatorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('creator');
+        Schema::dropIfExists('category');
     }
 }
