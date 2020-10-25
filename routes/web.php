@@ -15,14 +15,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-
-});
-
-
-$router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($router) {
-
+$router->group(['prefix' => 'api', 'middleware' => 'client.credentials'],function () use ($router){
     $router->get('users', ['uses' => 'UserController@index']);
 
     $router->get('/users/{id}', ['uses' => 'UserController@show']);
@@ -35,3 +28,5 @@ $router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($ro
 
     $router->delete('users/{id}', ['uses' => 'UserController@delete']);
 });
+
+//$router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($router) {});

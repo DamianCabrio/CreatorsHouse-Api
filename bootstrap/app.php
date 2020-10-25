@@ -27,6 +27,12 @@ $app->withFacades();
 
 $app->withEloquent();
 
+/**
+ * Registering config files
+ */
+
+$app->configure("auth");
+
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
@@ -77,7 +83,8 @@ $app->configure('app');
 // ]);
 
 $app->routeMiddleware([
-    'auth' => App\Http\Middleware\Auth0Middleware::class,
+    //'auth' => App\Http\Middleware\Auth0Middleware::class,
+    'client.credentials' => Laravel\Passport\Http\Middleware\CheckClientCredentials::class,
 ]);
 
 /*
