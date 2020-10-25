@@ -6,6 +6,7 @@ use App\Traits\ApiResponser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -48,7 +49,11 @@ class UserController extends Controller
 
         //validación de datos
         $this->validate($request, $rules);
-        $user = User::create($request->all());
+
+        $fields = $request->all();
+        $fields["password"] = Hash::make($request->password);
+
+        $user = User::create($fields);
         return $this->successResponse($user, 201);
     }
 
@@ -58,7 +63,7 @@ class UserController extends Controller
             //nickname es requerido
             'username' => 'max:10',
             //el email es requerido, tiene formato de email y es unico
-            'email' => 'email|unique:user',
+            'email' => 'email|unique:user,email,' . $id,
             //el email es requerido, tiene formato de email y es unico
             'password' => 'min:8',
             //avatar
@@ -68,6 +73,10 @@ class UserController extends Controller
 
         $user = User::findOrFail($id);
         $user->fill($request->all());
+
+        if($request->has("password")){
+            $user->password = Hash::make($request->password);
+        }
 
         if ($user->isClean()) {
             return $this->errorResponse("At least one value must change", Response::HTTP_UNPROCESSABLE_ENTITY);
@@ -84,5 +93,8 @@ class UserController extends Controller
         $user->delete();
         return $this->successResponse($user);
     }
-    //
+
+    public function me(Request $request){
+        return $this->successResponse($request->user());
+    }
 }

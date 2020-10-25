@@ -29,4 +29,6 @@ $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'],functio
     $router->delete('users/{id}', ['uses' => 'UserController@delete']);
 });
 
-//$router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($router) {});
+$router->group(['prefix' => 'api',"middleware" => "auth:api"], function () use ($router) {
+    $router->get("/users/me", "UserController@me");
+});
