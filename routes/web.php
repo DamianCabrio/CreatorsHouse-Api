@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\UserController;
-
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
@@ -14,14 +12,12 @@ use App\Http\Controllers\UserController;
 | and give it the Closure to call when that URI is requested.
 |
 */
-$router->get('/users/{id}', ['uses' => 'UserController@show']);
+//$router->get('/users/{id}', ['uses' => 'UserController@show']);
 
-$router->group(['prefix' => 'api', 'middleware' => 'client.credentials'],function () use ($router){
+$router->group(['prefix' => 'api', 'middleware' => 'client.credentials'], function () use ($router) {
     $router->get('users', ['uses' => 'UserController@index']);
 
-   // $router->get('/users/{id}', ['uses' => 'UserController@show']);
-
-    $router->post('users', ['uses' => 'UserController@store']);
+    $router->get('/users/{id}', ['uses' => 'UserController@show']);
 
     $router->put('users/{id}', ['uses' => 'UserController@update']);
 
@@ -30,6 +26,8 @@ $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'],functio
     $router->delete('users/{id}', ['uses' => 'UserController@delete']);
 });
 
-$router->group(['prefix' => 'api',"middleware" => "auth:api"], function () use ($router) {
+$router->post('users', ['uses' => 'UserController@store']);
+
+$router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
     $router->get("/users/me", "UserController@me");
 });

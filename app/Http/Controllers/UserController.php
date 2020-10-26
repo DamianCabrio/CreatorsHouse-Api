@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Traits\ApiResponser;
 use App\Models\User;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
@@ -54,12 +54,16 @@ class UserController extends Controller
         $fields["password"] = Hash::make($request->password);
 
         $user = User::create($fields);
-        return $this->successResponse($user, 201);
+
+        $data['token'] = $user->createToken('CreatorHouse')->accessToken;
+        $data['name'] = $user->name;
+
+        return $this->successResponse($user, 201, $data);
     }
 
     public function update(Request $request, $id)
     {
-        $rules =  [
+        $rules = [
             //nickname es requerido
             'username' => 'max:10',
             //el email es requerido, tiene formato de email y es unico
@@ -74,7 +78,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->fill($request->all());
 
-        if($request->has("password")){
+        if ($request->has("password")) {
             $user->password = Hash::make($request->password);
         }
 
@@ -94,7 +98,8 @@ class UserController extends Controller
         return $this->successResponse($user);
     }
 
-    public function me(Request $request){
+    public function me(Request $request)
+    {
         return $this->successResponse($request->user());
     }
 }

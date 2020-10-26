@@ -21,7 +21,7 @@ class CreateUserTable extends Migration
             $table->string('surname')->nullable();
             $table->string('email')->unique();
             $table->string('avatar')->nullable();
-            $table->date('birthDate');
+            $table->date('birthDate')->nullable();
             $table->unsignedInteger('dni')->nullable();
             $table->string('password');
             $table->boolean('isCreator')->default(false);

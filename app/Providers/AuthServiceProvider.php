@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\User;
 use Dusterio\LumenPassport\LumenPassport;
 use Illuminate\Support\ServiceProvider;
 

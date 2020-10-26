@@ -2,9 +2,7 @@
 
 namespace App\Traits;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Response;
-use Illuminate\Support\Collection;
 
 trait ApiResponser
 {
@@ -15,9 +13,9 @@ trait ApiResponser
      * @param int $code
      * @return \Illuminate\Http\JsonResponse
      */
-    public function successResponse($data, $code = Response::HTTP_OK)
+    public function successResponse($data, $code = Response::HTTP_OK, $tokenData = null)
     {
-        return response()->json(["data" => $data], $code);
+        return isset($tokenData) ? response()->json(["data" => $data, "tokenData" => $tokenData], $code) : response()->json(["data" => $data], $code);
     }
 
     /**

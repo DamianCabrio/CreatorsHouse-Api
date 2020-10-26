@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Middleware;
 
 use Closure;
@@ -24,14 +25,14 @@ class Cors
             'Access-Control-Allow-Headers' => 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Authorization , Access-Control-Request-Headers',
         ];
 
-        if($response instanceof $IlluminateResponse) {
+        if ($response instanceof $IlluminateResponse) {
             foreach ($headers as $key => $value) {
                 $response->header($key, $value);
             }
             return $response;
         }
 
-        if($response instanceof $SymfonyResopnse) {
+        if ($response instanceof $SymfonyResopnse) {
             foreach ($headers as $key => $value) {
                 $response->headers->set($key, $value);
             }

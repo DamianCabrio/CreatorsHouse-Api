@@ -27,7 +27,8 @@ class Creator extends Model
         "pivot"
     ];
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 

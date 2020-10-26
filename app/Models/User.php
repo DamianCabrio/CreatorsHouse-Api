@@ -38,13 +38,14 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     protected $table = "user";
 
-    public function creator(){
-        return $this->hasOne(Creator::class);
-    }
-
     public static function generateVerificationCode()
     {
         return Str::random(40);
+    }
+
+    public function creator()
+    {
+        return $this->hasOne(Creator::class);
     }
 
     public function setNameAttribute($name)
