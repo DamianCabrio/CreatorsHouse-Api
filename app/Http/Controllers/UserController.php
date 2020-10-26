@@ -55,10 +55,32 @@ class UserController extends Controller
 
         $user = User::create($fields);
 
-        $data['token'] = $user->createToken('CreatorHouse')->accessToken;
-        $data['name'] = $user->name;
+        $data['token'] = $user->createToken('users')->accessToken;
 
         return $this->successResponse($user, 201, $data);
+    }
+
+    public function login(Request $request)
+    {
+        $rules = [
+            'email' => 'required|email',
+            //el email es requerido, tiene formato de email y es unico
+            'password' => 'required',
+        ];
+
+        $this->validate($request, $rules);
+
+        $check_users = User::where("email", $request->email)->first();
+
+        if(@count($check_users) > 0){
+            $password = $request->password;
+            if(Hash::check($password,$check_users["password"])){
+                $response["token"] = $check_users->createToken("users")->accessToken;
+                return $this->successResponse($check_users, 200, $response);
+            }
+        }else{
+            return $this->errorResponse("El login es incorrecto",401);
+        }
     }
 
     public function update(Request $request, $id)

@@ -27,6 +27,7 @@ $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'], functi
 });
 
 $router->post('users', ['uses' => 'UserController@store']);
+$router->post('login', ['uses' => 'UserController@login']);
 
 $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
     $router->get("/users/me", "UserController@me");
