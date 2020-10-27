@@ -12,10 +12,12 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-//$router->get('/users/{id}', ['uses' => 'UserController@show']);
+$router->get('/users/{id}', ['uses' => 'UserController@show']);
+$router->get('users', ['uses' => 'UserController@index']);
+$router->get('categories', ['uses' => 'CategoryController@index']);
 
 $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'], function () use ($router) {
-    $router->get('users', ['uses' => 'UserController@index']);
+
 
     $router->get('/users/{id}', ['uses' => 'UserController@show']);
 
@@ -25,10 +27,8 @@ $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'], functi
 
     $router->delete('users/{id}', ['uses' => 'UserController@delete']);
 });
-
+/* $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
+    $router->get("/users/me", "UserController@me");
+}); */
 $router->post('users', ['uses' => 'UserController@store']);
 $router->post('login', ['uses' => 'UserController@login']);
-
-$router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
-    $router->get("/users/me", "UserController@me");
-});

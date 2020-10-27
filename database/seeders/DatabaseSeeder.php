@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Creator;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -21,5 +23,15 @@ class DatabaseSeeder extends Seeder
         User::flushEventListeners();
         $usersQuantity = 100;
         User::factory($usersQuantity)->create();
+
+        Category::truncate();
+        Category::flushEventListeners();
+        $categoriesQuantity = 100;
+        Category::factory($categoriesQuantity)->create();
+
+        Creator::truncate();
+        Creator::flushEventListeners();
+        $creatorsQuantity = 100;
+        Creator::factory($creatorsQuantity)->create();
     }
 }
