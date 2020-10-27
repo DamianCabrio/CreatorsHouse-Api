@@ -34,6 +34,12 @@ class UserController extends Controller
         return $this->successResponse($user);
     }
 
+    public function showCreators($id)
+    {
+        $user = User::findOrFail($id,);
+        return $this->successResponse($user);
+    }
+
     public function store(Request $request)
     {
         $rules = [
@@ -72,14 +78,14 @@ class UserController extends Controller
 
         $check_users = User::where("email", $request->email)->first();
 
-        if(@count($check_users) > 0){
+        if (@count($check_users) > 0) {
             $password = $request->password;
-            if(Hash::check($password,$check_users["password"])){
+            if (Hash::check($password, $check_users["password"])) {
                 $response["token"] = $check_users->createToken("users")->accessToken;
                 return $this->successResponse($check_users, 200, $response);
             }
-        }else{
-            return $this->errorResponse("El login es incorrecto",401);
+        } else {
+            return $this->errorResponse("El login es incorrecto", 401);
         }
     }
 

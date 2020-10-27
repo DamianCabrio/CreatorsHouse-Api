@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Creator;
+use App\Models\User;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -39,5 +40,11 @@ class CreatorController extends Controller
         $Creator = Creator::findOrFail($id);
         $Creator->delete();
         return $this->successResponse($Creator);
+    }
+
+    public function showCreators()
+    {
+        $check_creators = User::where("isCreator", 1)->get();
+        return $this->successResponse($check_creators);
     }
 }
