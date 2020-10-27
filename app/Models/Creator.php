@@ -7,6 +7,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Creator extends Model
 {
@@ -26,6 +27,8 @@ class Creator extends Model
     protected $hidden = [
         "pivot"
     ];
+
+    protected $table = "creator";
 
     public function user()
     {

@@ -6,7 +6,7 @@ use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class UserFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
@@ -24,7 +24,7 @@ class UserFactory extends Factory
     {
         return [
             'nameCategory' => $this->faker->unique()->word,
-            'description' => $this->faker->paragraph(10),
+            'description' => $this->faker->paragraph(1),
         ];
     }
 }

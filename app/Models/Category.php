@@ -23,27 +23,29 @@ class Category extends Model
         "pivot"
     ];
 
+    protected $table = "category";
+
     public function creators()
     {
         return $this->belongsToMany(Creator::class);
     }
-    public function setNameCategoryAttribute($name)
+    public function setNameCategoryAttribute($nameCategory)
     {
-        $this->attributes["name"] = strtolower($name);
+        $this->attributes["nameCategory"] = strtolower($nameCategory);
     }
 
-    public function getDescriptionAttribute($name)
+    public function getDescriptionAttribute($description)
     {
-        return ucwords($name);
+        return ucwords($description);
     }
 
-    public function setDescriptionAttribute($surname)
+    public function setDescriptionAttribute($description)
     {
-        $this->attributes["surname"] = strtolower($surname);
+        $this->attributes["description"] = strtolower($description);
     }
 
-    public function getSurnameAttribute($surname)
+    public function getNameCategoryAttribute($nameCategory)
     {
-        return ucwords($surname);
+        return ucwords($nameCategory);
     }
 }

@@ -2,18 +2,19 @@
 
 namespace Database\Factories;
 
+use App\Models\Creator;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class UserFactory extends Factory
+class CreatorFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Creator::class;
 
     /**
      * Define the model's default state.
@@ -23,19 +24,13 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'username' => $this->faker->unique()->word,
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'email' => $this->faker->unique()->safeEmail,
-            "isCreator" => $this->faker->randomElement([0, 1]),
-            "avatar" => $this->faker->randomElement(["ElSaurio.jpg", "Norbert.jpg", "Laura.jpg"]),
-            "birthDate" => $this->faker->date("Y-m-d", "2002-10-19"),
-            "name" => $this->faker->firstName(),
-            "surname" => $this->faker->lastName,
-            "dni" => $this->faker->randomNumber(8),
-            "isAdmin" => $this->faker->randomElement([0, 1]),
-            "isVerified" => $isVerified = $this->faker->randomElement([0, 1]),
-            "verificationToken" => $isVerified == 1 ? null : User::generateVerificationCode(),
-            'remember_token' => Str::random(10),
+            'banner' => $this->faker->unique()->word,
+            'description' => $this->faker->paragraph(2),
+            'instagram' => $this->faker->randomElement(["https://www.instagram.com/lau.muri/", "https://www.instagram.com/damian.cabr/", "https://www.instagram.com/n0rb3rt/"]),
+            "youtube" => $this->faker->randomElement(["https://www.youtube.com/channel/UC3kKUVzWcPY9ExjNXzFPBUw", "https://www.youtube.com/c/ElTobaoficial", "https://www.youtube.com/c/FitDanceLife"]),
+            "costVip" => $this->faker->randomNumber([100, 200, 150]),
+            "emailMercadoPago" => $this->faker->unique()->safeEmail,
+            "idUser" => $this->faker->randomNumber([1, 2, 3, 4, 5]),
         ];
     }
 }

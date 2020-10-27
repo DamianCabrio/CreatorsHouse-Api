@@ -26,12 +26,12 @@ class DatabaseSeeder extends Seeder
 
         Category::truncate();
         Category::flushEventListeners();
-        $categoriesQuantity = 100;
+        $categoriesQuantity = 5;
         Category::factory($categoriesQuantity)->create();
 
         Creator::truncate();
         Creator::flushEventListeners();
-        $creatorsQuantity = 100;
+        $creatorsQuantity = 5;
         Creator::factory($creatorsQuantity)->create();
     }
 }

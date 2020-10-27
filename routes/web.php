@@ -15,6 +15,7 @@
 $router->get('/users/{id}', ['uses' => 'UserController@show']);
 $router->get('users', ['uses' => 'UserController@index']);
 $router->get('categories', ['uses' => 'CategoryController@index']);
+$router->get('creators', ['uses' => 'CreatorController@index']);
 
 $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'], function () use ($router) {
 
