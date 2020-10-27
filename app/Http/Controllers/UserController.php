@@ -25,7 +25,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return $this->successResponse($users);
+        return $this->showAll($users);
     }
 
     public function show($id)
