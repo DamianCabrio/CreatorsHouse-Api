@@ -23,6 +23,8 @@ class CreatorFactory extends Factory
      */
     public function definition()
     {
+        $usersCreator = User::where("isCreator", 1)->get();
+
         return [
             'banner' => $this->faker->unique()->word,
             'description' => $this->faker->paragraph(2),
@@ -30,7 +32,8 @@ class CreatorFactory extends Factory
             "youtube" => $this->faker->randomElement(["https://www.youtube.com/channel/UC3kKUVzWcPY9ExjNXzFPBUw", "https://www.youtube.com/c/ElTobaoficial", "https://www.youtube.com/c/FitDanceLife"]),
             "costVip" => $this->faker->randomNumber([100, 200, 150]),
             "emailMercadoPago" => $this->faker->unique()->safeEmail,
-            "idUser" => $this->faker->randomNumber([1, 2, 3, 4, 5]),
+            //"idUser" => $this->faker->randomNumber([1, 2, 3, 4, 5]),
+            "idUser" => $usersCreator->random(),
         ];
     }
 }
