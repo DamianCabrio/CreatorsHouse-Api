@@ -12,11 +12,16 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
+//Para el home de Crator House
 $router->get('/users/{id}', ['uses' => 'UserController@show']);
 $router->get('users', ['uses' => 'UserController@index']);
 $router->get('categories', ['uses' => 'CategoryController@index']);
 $router->get('creators', ['uses' => 'CreatorController@index']);
 $router->get('userCreators', ['uses' => 'CreatorController@showCreators']);
+//Registro de Usuario
+$router->post('users', ['uses' => 'UserController@store']);
+//Login de usuario
+$router->post('login', ['uses' => 'UserController@login']);
 
 $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'], function () use ($router) {
 
@@ -29,8 +34,8 @@ $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'], functi
 
     $router->delete('users/{id}', ['uses' => 'UserController@delete']);
 });
+
+//Recuperar usuario con el token
 /* $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
     $router->get("/users/me", "UserController@me");
 }); */
-$router->post('users', ['uses' => 'UserController@store']);
-$router->post('login', ['uses' => 'UserController@login']);
