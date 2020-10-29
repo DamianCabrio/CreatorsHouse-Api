@@ -47,4 +47,9 @@ class CreatorController extends Controller
         $check_creators = User::where("isCreator", 1)->get();
         return $this->successResponse($check_creators);
     }
+    public function showCreatorsHome()
+    {
+        $check_creators = User::where("isCreator", 1)->get()->random(6);
+        return $this->successResponse($check_creators);
+    }
 }

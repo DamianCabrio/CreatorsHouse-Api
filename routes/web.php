@@ -18,13 +18,13 @@ $router->get('users', ['uses' => 'UserController@index']);
 $router->get('categories', ['uses' => 'CategoryController@index']);
 $router->get('creators', ['uses' => 'CreatorController@index']);
 $router->get('userCreators', ['uses' => 'CreatorController@showCreators']);
+$router->get('userCreatorsHome', ['uses' => 'CreatorController@showCreatorsHome']);
 //Registro de Usuario
 $router->post('users', ['uses' => 'UserController@store']);
 //Login de usuario
 $router->post('login', ['uses' => 'UserController@login']);
 
 $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'], function () use ($router) {
-
 
     $router->get('/users/{id}', ['uses' => 'UserController@show']);
 
