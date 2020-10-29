@@ -22,7 +22,7 @@ class Auth0Middleware
     {
         $token = $request->bearerToken();
         if (!$token) {
-            return response()->json('No token provided', 401);
+            return response()->json('El token no ha sido provisto', 401);
         }
 
         $this->validateToken($token);
