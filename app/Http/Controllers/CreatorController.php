@@ -35,6 +35,12 @@ class CreatorController extends Controller
         return $this->successResponse($Creator);
     }
 
+    public function showOne($idUser)
+    {
+        $Creator = Creator::where("idUser", "=", $idUser)->get();
+        return $this->successResponse($Creator);
+    }
+
     public function delete($id)
     {
         $Creator = Creator::findOrFail($id);
