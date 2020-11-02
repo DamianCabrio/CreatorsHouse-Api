@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Follow;
+use App\Models\Post;
 use App\Models\User;
 use App\Models\Creator;
 use App\Models\Category;
@@ -33,6 +35,16 @@ class DatabaseSeeder extends Seeder
         Creator::flushEventListeners();
         $creatorsQuantity = 5;
         Creator::factory($creatorsQuantity)->create();
+
+        Post::truncate();
+        Post::flushEventListeners();
+        $postsQuantity = 100;
+        Post::factory($postsQuantity)->create();
+
+        Follow::truncate();
+        Follow::flushEventListeners();
+        $followsQuantity = 30;
+        Follow::factory($followsQuantity)->create();
 
         /* Category_Creator::truncate();
         Category_Creator::flushEventListeners();
