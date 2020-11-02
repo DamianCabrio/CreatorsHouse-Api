@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Follow;
+use App\Models\Like;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Creator;
@@ -45,6 +46,11 @@ class DatabaseSeeder extends Seeder
         Follow::flushEventListeners();
         $followsQuantity = 30;
         Follow::factory($followsQuantity)->create();
+
+        Like::truncate();
+        Like::flushEventListeners();
+        $likesQuantity = 30;
+        Like::factory($likesQuantity)->create();
 
         /* Category_Creator::truncate();
         Category_Creator::flushEventListeners();

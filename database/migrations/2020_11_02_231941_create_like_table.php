@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFollowTable extends Migration
+class CreateLikeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateFollowTable extends Migration
      */
     public function up()
     {
-        Schema::create('follow', function (Blueprint $table) {
+        Schema::create('like', function (Blueprint $table) {
+            $table->foreignId("idPost");
             $table->foreignId("idUser");
-            $table->foreignId("idCreator");
-            $table->boolean("isVip");
-            $table->timestamps();
             $table->softDeletes();
+            $table->timestamps();
 
+            $table->foreign("idPost")->references("id")->on("post");
             $table->foreign("idUser")->references("id")->on("user");
-            $table->foreign("idCreator")->references("id")->on("creator");
         });
     }
 
@@ -32,6 +31,6 @@ class CreateFollowTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('follow');
+        Schema::dropIfExists('like');
     }
 }
