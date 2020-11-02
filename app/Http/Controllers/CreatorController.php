@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Creator;
 use App\Models\User;
 use App\Traits\ApiResponser;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Hash;
 
 class CreatorController extends Controller
 {
@@ -53,6 +50,7 @@ class CreatorController extends Controller
         $check_creators = User::where("isCreator", 1)->get();
         return $this->successResponse($check_creators);
     }
+
     public function showCreatorsHome()
     {
         $check_creators = User::where("isCreator", 1)->get()->random(6);

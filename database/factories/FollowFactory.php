@@ -2,11 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\Creator;
 use App\Models\Follow;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 class FollowFactory extends Factory
 {
@@ -29,7 +27,7 @@ class FollowFactory extends Factory
         return [
             'idUser' => $user,
             'idCreator' => $creator->random(),
-            'isVip' => $this->faker->randomElement([true,false]),
+            'isVip' => $this->faker->randomElement([true, false]),
         ];
     }
 }

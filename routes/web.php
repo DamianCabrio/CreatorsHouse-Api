@@ -19,7 +19,6 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
 });
 
 
-
 //$router->get('/users/{id}', ['uses' => 'UserController@show']);
 //$router->get('users', ['uses' => 'UserController@index']);
 
