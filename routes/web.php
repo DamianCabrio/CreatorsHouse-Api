@@ -18,17 +18,26 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
     $router->get("/usercreator/{idUser}", "CreatorController@showOne");
 });
 
-//Para el home de Crator House
+
+
 //$router->get('/users/{id}', ['uses' => 'UserController@show']);
 //$router->get('users', ['uses' => 'UserController@index']);
+
+//---------Para el home de Crator House
 $router->get('categories', ['uses' => 'CategoryController@index']);
 $router->get('creators', ['uses' => 'CreatorController@index']);
 $router->get('userCreators', ['uses' => 'CreatorController@showCreators']);
 $router->get('userCreatorsHome', ['uses' => 'CreatorController@showCreatorsHome']);
+//Lista todos los creadores de una categoria dada
+$router->get("/catCreators/{category_id}", "CategoryController@showCatCreators");
+//------------------
+
 //Registro de Usuario
 $router->post('users', ['uses' => 'UserController@store']);
+
 //Login de usuario
 $router->post('login', ['uses' => 'UserController@login']);
+
 
 $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'], function () use ($router) {
 

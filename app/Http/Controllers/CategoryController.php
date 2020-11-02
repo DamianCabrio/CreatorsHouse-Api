@@ -40,4 +40,11 @@ class CategoryController extends Controller
         $Category->delete();
         return $this->successResponse($Category);
     }
+
+    public function showCatCreators($category_id)
+    {
+        $category = Category::find($category_id);
+        $cat_creators = $category->creators;
+        return json_encode($cat_creators);
+    }
 }

@@ -29,6 +29,7 @@ class Category extends Model
     {
         return $this->belongsToMany(Creator::class);
     }
+
     public function setNameCategoryAttribute($nameCategory)
     {
         $this->attributes["nameCategory"] = strtolower($nameCategory);
