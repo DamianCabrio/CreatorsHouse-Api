@@ -33,5 +33,10 @@ class DatabaseSeeder extends Seeder
         Creator::flushEventListeners();
         $creatorsQuantity = 5;
         Creator::factory($creatorsQuantity)->create();
+
+        /* Category_Creator::truncate();
+        Category_Creator::flushEventListeners();
+        $creatorsQuantity = 5;
+        Category_Creator::factory($creatorsQuantity)->create(); */
     }
 }

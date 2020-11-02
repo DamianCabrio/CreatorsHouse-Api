@@ -16,11 +16,16 @@ class CreateCategoryCreatorTable extends Migration
         Schema::create('category_creator', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId("category_id");
-            $table->foreignId("creator_id");
+            $table->foreignId("category_id")->unsigned();;
+            $table->foreignId("creator_id")->unsigned();;
 
-            $table->foreign("category_id")->references("id")->on("category");
-            $table->foreign("creator_id")->references("id")->on("creator");
+            $table->foreign("category_id")->references("id")->on("category")
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign("creator_id")->references("id")->on("creator")
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
