@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Post extends Model
+class Image extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = "post";
+    protected $table = "image";
 
-    public function creator(){
-        return $this->belongsTo(Creator::class);
+    public function post(){
+        return $this->belongsTo(Post::class);
     }
 }

@@ -5,9 +5,11 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Creator;
 use App\Models\Follow;
+use App\Models\Image;
 use App\Models\Like;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Video;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -51,6 +53,16 @@ class DatabaseSeeder extends Seeder
         Like::flushEventListeners();
         $likesQuantity = 30;
         Like::factory($likesQuantity)->create();
+
+        Image::truncate();
+        Image::flushEventListeners();
+        $imagesQuantity = 30;
+        Image::factory($imagesQuantity)->create();
+
+        Video::truncate();
+        Video::flushEventListeners();
+        $videosQuantity = 30;
+        Video::factory($videosQuantity)->create();
 
         /* Category_Creator::truncate();
         Category_Creator::flushEventListeners();

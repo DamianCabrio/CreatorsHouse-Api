@@ -11,4 +11,12 @@ class Follow extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = "follow";
+
+    public function user(){
+        return $this->hasOne(User::class);
+    }
+
+    public function creator(){
+        return $this->hasOne(User::class);
+    }
 }

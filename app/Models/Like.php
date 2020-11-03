@@ -11,4 +11,8 @@ class Like extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = "like";
+
+    public function post(){
+        return $this->belongsTo(Post::class);
+    }
 }
