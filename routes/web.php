@@ -1,6 +1,6 @@
 <?php
 
-/** @var \Laravel\Lumen\Routing\Router $router */
+/** @var Router $router */
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +13,15 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+use Laravel\Lumen\Routing\Router;
+
+$router->get('/users/verify/{token}', ["as" => "verify", "uses" => "UserController@verify"]);
+
 $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
     $router->get("/users/me", "UserController@me");
     $router->get("/usercreator/{idUser}", "CreatorController@showOne");
 });
-
 
 //$router->get('/users/{id}', ['uses' => 'UserController@show']);
 //$router->get('users', ['uses' => 'UserController@index']);

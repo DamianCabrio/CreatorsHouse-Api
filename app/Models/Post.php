@@ -12,7 +12,8 @@ class Post extends Model
 
     protected $table = "post";
 
-    public function creator(){
+    public function creator()
+    {
         return $this->belongsTo(Creator::class);
     }
 }

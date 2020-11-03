@@ -12,11 +12,13 @@ class Follow extends Model
 
     protected $table = "follow";
 
-    public function user(){
+    public function user()
+    {
         return $this->hasOne(User::class);
     }
 
-    public function creator(){
+    public function creator()
+    {
         return $this->hasOne(User::class);
     }
 }

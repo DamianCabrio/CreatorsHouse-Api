@@ -26,7 +26,7 @@ class CreateUserTable extends Migration
             $table->string('password');
             $table->boolean('isCreator')->default(false);
             $table->boolean('isAdmin')->default(false);
-            $table->string('verificationToken')->nullable();
+            $table->string('verification_token')->nullable();
             $table->boolean('isVerified')->default(false);
             $table->softDeletes();
             $table->rememberToken();

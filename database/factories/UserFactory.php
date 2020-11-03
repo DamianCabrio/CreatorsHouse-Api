@@ -34,7 +34,7 @@ class UserFactory extends Factory
             "dni" => $this->faker->randomNumber(8),
             "isAdmin" => $this->faker->randomElement([0, 1]),
             "isVerified" => $isVerified = $this->faker->randomElement([0, 1]),
-            "verificationToken" => $isVerified == 1 ? null : User::generateVerificationCode(),
+            "verification_token" => $isVerified == 1 ? null : User::generateVerificationCode(),
             'remember_token' => Str::random(10),
         ];
     }

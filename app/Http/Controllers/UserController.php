@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\UserCreated;
 use App\Models\User;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -58,6 +60,7 @@ class UserController extends Controller
 
         $fields = $request->all();
         $fields["password"] = Hash::make($request->password);
+        $fields["verification_token"] = User::generateVerificationCode();
 
         $user = User::create($fields);
 
@@ -129,5 +132,15 @@ class UserController extends Controller
     public function me(Request $request)
     {
         return $this->successResponse($request->user());
+    }
+
+    public function verify($token)
+    {
+        $user = User::where("verification_token", $token)->firstOrFail();
+
+        $user->verification_token = null;
+        $user->save();
+
+        return $this->showMessage("The account has been verified succesfully");
     }
 }

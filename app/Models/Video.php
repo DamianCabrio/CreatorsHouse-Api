@@ -12,7 +12,8 @@ class Video extends Model
 
     protected $table = "video";
 
-    public function post(){
+    public function post()
+    {
         return $this->belongsTo(Post::class);
     }
 }
