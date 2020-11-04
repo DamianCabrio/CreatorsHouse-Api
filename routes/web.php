@@ -17,7 +17,8 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
     $router->get("/users/me", "UserController@me");
     $router->get("/usercreator/{idUser}", "CreatorController@showOne");
 });
-
+//Muestra todos los Posts de un creator
+$router->get("/postscreator/{creator_id}", "CreatorController@showPostsCreator");
 
 //$router->get('/users/{id}', ['uses' => 'UserController@show']);
 //$router->get('users', ['uses' => 'UserController@index']);
@@ -37,8 +38,8 @@ $router->post('users', ['uses' => 'UserController@store']);
 //Login de usuario
 $router->post('login', ['uses' => 'UserController@login']);
 
-
-$router->group(['prefix' => 'api', 'middleware' => 'client.credentials'], function () use ($router) {
+//Prueba con Auth0 y jwt
+/* $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'], function () use ($router) {
 
     $router->get('/users/{id}', ['uses' => 'UserController@show']);
 
@@ -47,7 +48,7 @@ $router->group(['prefix' => 'api', 'middleware' => 'client.credentials'], functi
     $router->patch('users/{id}', ['uses' => 'UserController@update']);
 
     $router->delete('users/{id}', ['uses' => 'UserController@delete']);
-});
+}); */
 
 //$router->post('users', ['uses' => 'UserController@store']);
 //$router->post('login', ['uses' => 'UserController@login']);

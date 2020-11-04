@@ -43,7 +43,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         return Str::random(40);
     }
 
-    //Esta funcion te devuelve el creator para ese usaurio relacion 1 a 1
+    //Esta funcion te devuelve el creator para ese usuario relacion 1 a 1
     public function creator()
     {
         return $this->hasOne(Creator::class);

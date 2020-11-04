@@ -56,4 +56,12 @@ class CreatorController extends Controller
         $check_creators = User::where("isCreator", 1)->get()->random(6);
         return $this->successResponse($check_creators);
     }
+
+    //Mostrar todos los post del creador
+    public function showPostsCreator($creator_id)
+    {
+        $creator = Creator::find($creator_id);
+        $postsCreator = $creator->posts;
+        return json_encode($postsCreator);
+    }
 }

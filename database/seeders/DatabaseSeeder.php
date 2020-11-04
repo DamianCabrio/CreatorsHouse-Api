@@ -64,9 +64,9 @@ class DatabaseSeeder extends Seeder
         $videosQuantity = 30;
         Video::factory($videosQuantity)->create();
 
-        /* Category_Creator::truncate();
+        Category_Creator::truncate();
         Category_Creator::flushEventListeners();
-        $creatorsQuantity = 5;
-        Category_Creator::factory($creatorsQuantity)->create(); */
+        $Category_CreatorQuantity = 5;
+        Category_Creator::factory($Category_CreatorQuantity)->create();
     }
 }
