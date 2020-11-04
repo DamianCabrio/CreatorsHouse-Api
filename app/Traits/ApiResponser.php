@@ -19,6 +19,11 @@ trait ApiResponser
         return response()->json(["error" => $message, "code" => $code], $code);
     }
 
+    public function showMessage($message, $code = Response::HTTP_OK)
+    {
+        return response()->json($message, $code);
+    }
+
     protected function showAll(Collection $collection, $code = 200)
     {
         if ($collection->isEmpty()) {

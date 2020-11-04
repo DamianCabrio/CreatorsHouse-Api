@@ -12,7 +12,8 @@ class Like extends Model
 
     protected $table = "like";
 
-    public function post(){
+    public function post()
+    {
         return $this->belongsTo(Post::class);
     }
 }
