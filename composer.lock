@@ -1997,7 +1997,7 @@
         },
         {
             "name": "illuminate/mail",
-            "version": "v8.12.3",
+            "version": "v8.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/mail.git",

@@ -12,15 +12,15 @@ class Post extends Model
 
     protected $table = "post";
 
-    /*public function creator()
-    {
-        return $this->belongsTo(Creator::class);
-    } */
-
     public function creator()
     {
-        return $this->hasOne(Creator::class);
+        return $this->belongsTo(Creator::class);
     }
+
+    /*  public function creator()
+    {
+        return $this->hasOne(Creator::class);
+    } */
 
     public function videos()
     {

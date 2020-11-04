@@ -10,6 +10,7 @@ use App\Models\Like;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Video;
+use App\Models\Category_Creator;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
