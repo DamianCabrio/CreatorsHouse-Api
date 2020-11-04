@@ -62,6 +62,7 @@ class CreatorController extends Controller
     {
         $creator = Creator::find($creator_id);
         $postsCreator = $creator->posts;
+
         return json_encode($postsCreator);
     }
 }
