@@ -57,7 +57,7 @@ class CreatorController extends Controller
         return $this->successResponse($check_creators);
     }
 
-    //Mostrar todos los post del creador
+    //Mostrar todos los post del creador (con sus images y videos)
     public function showPostsCreator($creator_id)
     {
         $creator = Creator::find($creator_id);

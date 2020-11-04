@@ -12,28 +12,28 @@ class Post extends Model
 
     protected $table = "post";
 
-    public function creator()
+    /* public function creator()
     {
         return $this->belongsTo(Creator::class);
-    }
+    } */
 
-    /*  public function creator()
+    public function creator()
     {
         return $this->hasOne(Creator::class);
-    } */
+    }
 
     public function videos()
     {
-        return $this->belongsToMany(Video::class);
+        return $this->hasMany(Video::class);
     }
 
     public function likes()
     {
-        return $this->belongsToMany(Like::class);
+        return $this->hasMany(Like::class);
     }
 
     public function images()
     {
-        return $this->belongsToMany(Image::class);
+        return $this->hasMany(Image::class);
     }
 }
