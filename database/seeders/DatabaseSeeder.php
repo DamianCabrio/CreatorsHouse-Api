@@ -10,7 +10,6 @@ use App\Models\Like;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Video;
-use App\Models\Category_Creator;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -65,9 +64,9 @@ class DatabaseSeeder extends Seeder
         $videosQuantity = 30;
         Video::factory($videosQuantity)->create();
 
-        Category_Creator::truncate();
-        Category_Creator::flushEventListeners();
-        $Category_CreatorQuantity = 5;
-        Category_Creator::factory($Category_CreatorQuantity)->create();
+//        Category_Creator::truncate();
+//        Category_Creator::flushEventListeners();
+//        $Category_CreatorQuantity = 5;
+//        Category_Creator::factory($Category_CreatorQuantity)->create();
     }
 }

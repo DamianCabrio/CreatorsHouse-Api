@@ -10,13 +10,15 @@
     "type": "project",
     "require": {
         "php": "^7.3",
+        "ext-json": "*",
         "auth0/auth0-php": "^7.4",
         "dusterio/lumen-passport": "^0.3.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
-        "illuminate/mail": "^8.12",
+        "illuminate/mail": "^8.13",
+        "illuminate/notifications": "^8.13",
         "laravel/lumen-framework": "^8.0",
-        "ext-json": "*"
+        "ramsey/uuid": "^4.1"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.9.1",

@@ -13,8 +13,10 @@
 |
 */
 
-use Illuminate\Support\Facades\Route;
 use Laravel\Lumen\Routing\Router;
+
+$router->post('/password/reset-request', 'RequestPasswordController@sendResetLinkEmail');
+$router->post('/password/reset', ['as' => 'password.reset', 'uses' => 'ResetPasswordController@reset']);
 
 $router->get('/users/verify/{token}', ["as" => "verify", "uses" => "UserController@verify"]);
 

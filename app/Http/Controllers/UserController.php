@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\UserCreated;
 use App\Models\User;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
