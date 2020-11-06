@@ -1,0 +1,420 @@
+[2020-11-01 01:17:35] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:17:36] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:18:45] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:18:53] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:19:39] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:19:41] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:19:42] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:19:43] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:19:44] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:21:23] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:21:23] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:21:24] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:21:26] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:21:26] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:21:27] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:22:40] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:22:41] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:22:42] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:22:43] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:22:44] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:22:44] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:22:45] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:23:58] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:23:58] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:24:02] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:24:03] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:26:40] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:26:41] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:26:43] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:28:45] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\outes\\web.php:19)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\bootstrap\\app.php(126): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(14): require('C:\\\\Users\\\\muril\\\\...')
+#4 {main}
+"} 
+[2020-11-01 01:37:43] local.ERROR: Unable to resolve dependency [Parameter #0 [ <required> $idUser ]] in class App\Http\Controllers\CreatorController {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Unable to resolve dependency [Parameter #0 [ <required> $idUser ]] in class App\\Http\\Controllers\\CreatorController at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php:180)
+[stacktrace]
+#0 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(124): Illuminate\\Container\\BoundMethod::addDependencyForCallParameter(Object(Laravel\\Lumen\\Application), Object(ReflectionParameter), Array, Array)
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(36): Illuminate\\Container\\BoundMethod::getMethodDependencies(Object(Laravel\\Lumen\\Application), Array, Array)
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#5 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#6 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#7 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#8 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CreatorController), 'showOne', Array)
+#9 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#10 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(259): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#11 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#12 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#13 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\app\\Http\\Middleware\\Authenticate.php(42): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#14 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(167): App\\Http\\Middleware\\Authenticate->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure), 'api')
+#15 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#16 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#17 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#18 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(423): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#19 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(260): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#20 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#21 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#22 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#23 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(57): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#24 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#25 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#26 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#27 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#28 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(423): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#29 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#30 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#31 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#32 {main}
+"} 
+[2020-11-01 01:40:00] local.ERROR: Unable to resolve dependency [Parameter #0 [ <required> $idUser ]] in class App\Http\Controllers\CreatorController {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Unable to resolve dependency [Parameter #0 [ <required> $idUser ]] in class App\\Http\\Controllers\\CreatorController at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php:180)
+[stacktrace]
+#0 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(124): Illuminate\\Container\\BoundMethod::addDependencyForCallParameter(Object(Laravel\\Lumen\\Application), Object(ReflectionParameter), Array, Array)
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(36): Illuminate\\Container\\BoundMethod::getMethodDependencies(Object(Laravel\\Lumen\\Application), Array, Array)
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#5 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#6 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#7 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#8 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CreatorController), 'showOne', Array)
+#9 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#10 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(259): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#11 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#12 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#13 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\app\\Http\\Middleware\\Authenticate.php(42): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#14 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(167): App\\Http\\Middleware\\Authenticate->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure), 'api')
+#15 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#16 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#17 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#18 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(423): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#19 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(260): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#20 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#21 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#22 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#23 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(57): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#24 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#25 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#26 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#27 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#28 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(423): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#29 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#30 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#31 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#32 {main}
+"} 
+[2020-11-01 01:40:49] local.ERROR: Unable to resolve dependency [Parameter #0 [ <required> $idUser ]] in class App\Http\Controllers\CreatorController {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Unable to resolve dependency [Parameter #0 [ <required> $idUser ]] in class App\\Http\\Controllers\\CreatorController at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php:180)
+[stacktrace]
+#0 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(124): Illuminate\\Container\\BoundMethod::addDependencyForCallParameter(Object(Laravel\\Lumen\\Application), Object(ReflectionParameter), Array, Array)
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(36): Illuminate\\Container\\BoundMethod::getMethodDependencies(Object(Laravel\\Lumen\\Application), Array, Array)
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#5 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#6 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#7 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#8 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CreatorController), 'showOne', Array)
+#9 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#10 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(259): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#11 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#12 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#13 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\app\\Http\\Middleware\\Authenticate.php(42): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#14 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(167): App\\Http\\Middleware\\Authenticate->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure), 'api')
+#15 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#16 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#17 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#18 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(423): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#19 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(260): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#20 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#21 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#22 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#23 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(57): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#24 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#25 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#26 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#27 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#28 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(423): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#29 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#30 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#31 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#32 {main}
+"} 
+[2020-11-01 01:40:55] local.ERROR: Unable to resolve dependency [Parameter #0 [ <required> $idUser ]] in class App\Http\Controllers\CreatorController {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Unable to resolve dependency [Parameter #0 [ <required> $idUser ]] in class App\\Http\\Controllers\\CreatorController at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php:180)
+[stacktrace]
+#0 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(124): Illuminate\\Container\\BoundMethod::addDependencyForCallParameter(Object(Laravel\\Lumen\\Application), Object(ReflectionParameter), Array, Array)
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(36): Illuminate\\Container\\BoundMethod::getMethodDependencies(Object(Laravel\\Lumen\\Application), Array, Array)
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#5 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#6 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#7 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#8 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CreatorController), 'showOne', Array)
+#9 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#10 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(259): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#11 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#12 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#13 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\app\\Http\\Middleware\\Authenticate.php(42): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#14 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(167): App\\Http\\Middleware\\Authenticate->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure), 'api')
+#15 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#16 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#17 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#18 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(423): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#19 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(260): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#20 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#21 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#22 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#23 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(57): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#24 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#25 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#26 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#27 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#28 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(423): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#29 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#30 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#31 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#32 {main}
+"} 
+[2020-11-01 02:10:15] local.ERROR: Unable to resolve dependency [Parameter #0 [ <required> $idUser ]] in class App\Http\Controllers\CreatorController {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Unable to resolve dependency [Parameter #0 [ <required> $idUser ]] in class App\\Http\\Controllers\\CreatorController at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php:180)
+[stacktrace]
+#0 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(124): Illuminate\\Container\\BoundMethod::addDependencyForCallParameter(Object(Laravel\\Lumen\\Application), Object(ReflectionParameter), Array, Array)
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(36): Illuminate\\Container\\BoundMethod::getMethodDependencies(Object(Laravel\\Lumen\\Application), Array, Array)
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#5 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#6 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#7 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#8 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CreatorController), 'showOne', Array)
+#9 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#10 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(259): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#11 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#12 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#13 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\app\\Http\\Middleware\\Authenticate.php(42): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#14 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(167): App\\Http\\Middleware\\Authenticate->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure), 'api')
+#15 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#16 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#17 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#18 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(423): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#19 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(260): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#20 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#21 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#22 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#23 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(57): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#24 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#25 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#26 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#27 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#28 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(423): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#29 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#30 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#31 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#32 {main}
+"} 

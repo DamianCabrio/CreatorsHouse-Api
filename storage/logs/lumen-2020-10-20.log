@@ -1,0 +1,17 @@
+[2020-10-20 20:58:34] local.ERROR: Expiration Time (exp) claim error in the ID token; current time (1603227513) is after expiration time (1603227379) {"exception":"[object] (Auth0\\SDK\\Exception\\InvalidTokenException(code: 0): Expiration Time (exp) claim error in the ID token; current time (1603227513) is after expiration time (1603227379) at C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\auth0\\auth0-php\\src\\Helpers\\Tokens\\TokenVerifier.php:146)
+[stacktrace]
+#0 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\app\\Http\\Middleware\\Auth0Middleware.php(41): Auth0\\SDK\\Helpers\\Tokens\\TokenVerifier->verify('eyJhbGciOiJSUzI...')
+#1 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\app\\Http\\Middleware\\Auth0Middleware.php(28): App\\Http\\Middleware\\Auth0Middleware->validateToken('eyJhbGciOiJSUzI...')
+#2 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(167): App\\Http\\Middleware\\Auth0Middleware->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#3 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#4 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#5 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#6 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(423): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#7 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(260): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#8 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#9 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(426): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#10 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#12 C:\\Users\\muril\\Documents\\Tecnicatura Diseño Web\\frameworks\\CreatorsHouse-Api\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#13 {main}
+"} 
