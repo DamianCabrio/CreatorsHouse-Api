@@ -37,7 +37,7 @@ trait ResetsPasswords
      */
     public function reset(Request $request)
     {
-        $this->validate($request,$this->rules(), $this->validationErrorMessages());
+        $this->validate($request, $this->rules(), $this->validationErrorMessages());
 
         // Here we will attempt to reset the user's password. If it is successful we
         // will update the password on an actual user model and persist it to the
@@ -136,16 +136,6 @@ trait ResetsPasswords
     }
 
     /**
-     * Get the guard to be used during password reset.
-     *
-     * @return \Illuminate\Contracts\Auth\StatefulGuard
-     */
-    protected function guard()
-    {
-        return Auth::guard();
-    }
-
-    /**
      * Get the response for a successful password reset.
      *
      * @param \Illuminate\Http\Request $request
@@ -169,5 +159,15 @@ trait ResetsPasswords
         return redirect()->back()
             ->withInput($request->only('email'))
             ->withErrors(['email' => trans($response)]);
+    }
+
+    /**
+     * Get the guard to be used during password reset.
+     *
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
+     */
+    protected function guard()
+    {
+        return Auth::guard();
     }
 }

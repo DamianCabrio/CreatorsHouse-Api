@@ -49,7 +49,7 @@ trait SendsPasswordResetEmails
      */
     protected function validateEmail(Request $request)
     {
-        $this->validate($request,['email' => 'required|email']);
+        $this->validate($request, ['email' => 'required|email']);
     }
 
     /**

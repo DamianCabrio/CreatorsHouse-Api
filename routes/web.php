@@ -15,11 +15,15 @@
 
 use Laravel\Lumen\Routing\Router;
 
+//Password Resset
 $router->post('/password/reset-request', 'RequestPasswordController@sendResetLinkEmail');
 $router->post('/password/reset', ['as' => 'password.reset', 'uses' => 'ResetPasswordController@reset']);
 
 $router->get('/users/verify/{token}', ["as" => "verify", "uses" => "UserController@verify"]);
 
+
+
+//Loged in user routes
 $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
     $router->get("/users/me", "UserController@me");
     $router->get("/usercreator/{idUser}", "CreatorController@showOne");
