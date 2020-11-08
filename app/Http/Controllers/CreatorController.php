@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Creator;
-use App\Models\Like;
-use App\Http\Controllers\LikeController;
 use App\Models\User;
 use App\Traits\ApiResponser;
 
