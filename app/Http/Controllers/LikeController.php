@@ -49,4 +49,11 @@ class LikeController extends Controller
         $Like->delete();
         return $this->successResponse($Like);
     }
+
+    //Devuelve la cantidad de likes de un post dado
+    public function totalLikes($post_id)
+    {
+        $cantLikes = Like::where('idPost', '=', $post_id)->get()->count();
+        return $cantLikes;
+    }
 }

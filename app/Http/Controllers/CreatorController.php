@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Creator;
+use App\Models\Like;
+use App\Http\Controllers\LikeController;
 use App\Models\User;
 use App\Traits\ApiResponser;
 
@@ -60,9 +62,18 @@ class CreatorController extends Controller
     //Mostrar todos los post del creador (con sus images y videos)
     public function showPostsCreator($creator_id)
     {
-        $creator = Creator::find($creator_id);
-        $postsCreator = $creator->posts;
+        $creator = Creator::findOrFail($creator_id);
 
+        $postsCreator = $creator->posts;
+        //recorrer el json, si es tipo 1 text- tipo 2 images- tipo 3 videos
+        foreach ($postsCreator as $unPost) {
+            //carga imagenes del post $unPost.cantidadLikes = $cantidadLikes;
+            $unPost['images'] = $unPost->images;
+            //carga videos del post
+            $unPost['videos'] = $unPost->videos;
+            //carga cantidad de likes del post? o likes del post?
+            $unPost['likes'] = $unPost->likes;
+        }
         return json_encode($postsCreator);
     }
 }

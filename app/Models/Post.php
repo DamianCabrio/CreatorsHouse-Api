@@ -19,21 +19,21 @@ class Post extends Model
 
     public function creator()
     {
-        return $this->hasOne(Creator::class);
+        return $this->hasOne(Creator::class, 'idCreador');
     }
 
     public function videos()
     {
-        return $this->hasMany(Video::class);
+        return $this->hasMany(Video::class, 'idPost');
     }
 
     public function likes()
     {
-        return $this->hasMany(Like::class);
+        return $this->hasMany(Like::class, 'idPost');
     }
 
     public function images()
     {
-        return $this->hasMany(Image::class);
+        return $this->hasMany(Image::class, 'idPost');
     }
 }

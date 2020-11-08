@@ -14,6 +14,6 @@ class Like extends Model
 
     public function post()
     {
-        return $this->hasOne(Post::class);
+        return $this->hasOne(Post::class, 'idPost');
     }
 }

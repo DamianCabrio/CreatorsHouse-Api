@@ -48,4 +48,20 @@ class Creator extends Model
     {
         return $this->belongsToMany(Follow::class);
     }
+
+    public function images()
+    {
+        return $this->hasManyThrough(Image::class, Post::class, 'idCreator', 'idPost');
+        //return $this->hasManyThrough('App\Resource', 'App\Class');
+    }
+
+    public function videos()
+    {
+        return $this->hasManyThrough(Video::class, Post::class, 'idCreator', 'idPost');
+    }
+
+    public function likes()
+    {
+        return $this->hasManyThrough(Like::class, Post::class, 'idCreator', 'idPost');
+    }
 }
