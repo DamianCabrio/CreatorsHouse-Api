@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Follow;
+use App\Models\Post;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 
@@ -48,5 +49,16 @@ class FollowController extends Controller
         $Follow = Follow::findOrFail($id);
         $Follow->delete();
         return $this->successResponse($Follow);
+    }
+
+    public function postFollow($user){
+        $usersFollows = Follow::where("idUser", $user)->get();
+        $posts = [];
+
+        foreach ($usersFollows as $creator){
+            $post = Post::where("idCreator", $creator->idCreator)->get();
+            array_push($posts,$post);
+        }
+        return $this->successResponse($posts);
     }
 }

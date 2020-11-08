@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Creator;
 use App\Models\Follow;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -23,7 +24,7 @@ class FollowFactory extends Factory
     public function definition()
     {
         $user = User::all()->random();
-        $creator = User::where("isCreator", 1)->where("id", "!=", $user->id)->get();
+        $creator = Creator::where("idUser", "!=", $user->id)->get();
         return [
             'idUser' => $user,
             'idCreator' => $creator->random(),
