@@ -39,6 +39,7 @@ $router->get('categories', ['uses' => 'CategoryController@index']);
 $router->get('creators', ['uses' => 'CreatorController@index']);
 $router->get('userCreators', ['uses' => 'CreatorController@showCreators']);
 $router->get('userCreatorsHome', ['uses' => 'CreatorController@showCreatorsHome']);
+$router->get('userShowOneRandCreator', ['uses' => 'CreatorController@showOneRandCreator']);
 //Lista todos los creadores de una categoria dada
 $router->get("/catCreators/{category_id}", "CategoryController@showCatCreators");
 //------------------
