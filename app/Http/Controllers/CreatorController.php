@@ -74,7 +74,8 @@ class CreatorController extends Controller
             //carga videos del post
             $unPost['videos'] = $unPost->videos;
             //carga cantidad de likes del post? o likes del post?
-            $unPost['likes'] = $unPost->likes;
+            $unPost['cantLikes'] = $unPost->likes->count();
+            //$unPost['Likes'] = $unPost->likes;
         }
         return json_encode($postsCreator);
     }
