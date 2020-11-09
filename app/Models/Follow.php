@@ -19,6 +19,6 @@ class Follow extends Model
 
     public function creator()
     {
-        return $this->hasOne(User::class);
+        return $this->hasMany(User::class);
     }
 }
