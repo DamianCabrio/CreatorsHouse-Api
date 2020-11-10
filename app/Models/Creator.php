@@ -31,7 +31,7 @@ class Creator extends Model
 
     public function user()
     {
-        return $this->hasOne(User::class, 'idUser');
+        return $this->hasOne(User::class, 'id');
     }
 
     public function categories()

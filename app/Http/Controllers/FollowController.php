@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Creator;
 use App\Models\Follow;
 use App\Models\Post;
 use App\Traits\ApiResponser;
@@ -51,13 +52,30 @@ class FollowController extends Controller
         return $this->successResponse($Follow);
     }
 
-    public function postFollow($user){
-        $usersFollows = Follow::where("idUser", $user)->get();
+    public function postFollow($user)
+    {
+        $creatorFollows = Follow::where("idUser", $user)->get();
+        $creators = [];
+        foreach ($creatorFollows as $follow){
+            $creator = Creator::where("id",$follow->idCreator)->get();
+            array_push($creators,$creator);
+        }
+
         $posts = [];
 
-        foreach ($usersFollows as $creator){
-            $post = Post::where("idCreator", $creator->idCreator)->get();
-            array_push($posts,$post);
+        foreach ($creators as $creator) {
+            $postsCreator = Post::where("idCreator", $creator[0]->id)->get();
+
+            foreach ($postsCreator as $unPost) {
+                //carga imagenes del post $unPost.cantidadLikes = $cantidadLikes;
+                $unPost['images'] = $unPost->images;
+                //carga videos del post
+                $unPost['videos'] = $unPost->videos;
+                //carga cantidad de likes del post? o likes del post?
+                $unPost['cantLikes'] = $unPost->likes->count();
+                $unPost["user"] = $creator[0]->user;
+            }
+            array_push($posts,$postsCreator);
         }
         return $this->successResponse($posts);
     }

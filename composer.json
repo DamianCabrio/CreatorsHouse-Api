@@ -11,7 +11,6 @@
     "require": {
         "php": "^7.3",
         "ext-json": "*",
-        "auth0/auth0-php": "^7.4",
         "dusterio/lumen-passport": "^0.3.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
