@@ -20,11 +20,14 @@ $router->post('/password/reset-request', 'RequestPasswordController@sendResetLin
 $router->post('/password/reset', ['as' => 'password.reset', 'uses' => 'ResetPasswordController@reset']);
 
 $router->get('/users/verify/{token}', ["as" => "verify", "uses" => "UserController@verify"]);
-$router->get("/follow/{user}/posts", ["as" => "postFollow", "uses" => "FollowController@postFollow"]);
+
 //Logged in user routes
 $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
     $router->get("/users/me", "UserController@me");
     $router->get("/usercreator/{idUser}", "CreatorController@showOne");
+    $router->get("/follow/{user}/posts", ["as" => "postFollow", "uses" => "FollowController@postFollow"]);
+    $router->post("/creators", ["as" => "createCreator", "uses" => "CreatorController@store"]);
+
 });
 //Muestra todos los Posts de un creator
 $router->get("/postscreator/{creator_id}", "CreatorController@showPostsCreator");

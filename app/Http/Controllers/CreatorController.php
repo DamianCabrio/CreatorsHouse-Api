@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Creator;
 use App\Models\User;
 use App\Traits\ApiResponser;
+use Illuminate\Http\Request;
 
 class CreatorController extends Controller
 {
@@ -50,7 +51,8 @@ class CreatorController extends Controller
         $fields = $request->all();
         $fields["idUser"] = $request->user()->id;
         $creator = Creator::create($fields);
-        $category = Category::find($fields["categories"]);
+        $categories = explode(",", $fields["categories"]);
+        $category = Category::findOrFail($categories);
         $creator->categories()->attach($category);
 
         return $this->successResponse($creator, 201);
