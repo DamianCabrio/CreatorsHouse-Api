@@ -86,4 +86,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         return $this->admin == true;
     }
+
+    public function followers()
+    {
+        return $this->hasMany(Follow::class, 'idUser');
+    }
 }

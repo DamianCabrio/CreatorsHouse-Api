@@ -31,7 +31,7 @@ class Creator extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasOne(User::class, 'idUser');
     }
 
     public function categories()
@@ -46,7 +46,7 @@ class Creator extends Model
 
     public function follows()
     {
-        return $this->belongsToMany(Follow::class);
+        return $this->hasMany(Follow::class, 'idCreator');
     }
 
     public function images()

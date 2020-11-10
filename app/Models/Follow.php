@@ -14,11 +14,11 @@ class Follow extends Model
 
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->hasOne(User::class, 'idUser');
     }
 
     public function creator()
     {
-        return $this->hasMany(User::class);
+        return $this->hasOne(Creator::class, 'idCreator');
     }
 }

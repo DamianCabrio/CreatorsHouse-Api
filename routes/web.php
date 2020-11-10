@@ -29,6 +29,10 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
 //Muestra todos los Posts de un creator
 $router->get("/postscreator/{creator_id}", "CreatorController@showPostsCreator");
 
+//Muestra todos los posts de los followers de un user
+$router->get("/postsFollows/{user_id}", "CreatorController@showPostsFollows");
+
+
 //$router->get('/users/{id}', ['uses' => 'UserController@show']);
 //$router->get('users', ['uses' => 'UserController@index']);
 
