@@ -20,7 +20,7 @@ class CreateVideoTable extends Migration
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign("idPost")->references("id")->on("post");
+            $table->foreign("idPost")->references("id")->on("post")->onDelete('cascade');
         });
     }
 

@@ -12,6 +12,11 @@ class Post extends Model
 
     protected $table = "post";
 
+    protected $fillable = [
+        'content', 'title', 'tipo', 'isPublic',"idCreator"
+    ];
+
+
     /* public function creator()
     {
         return $this->belongsTo(Creator::class);

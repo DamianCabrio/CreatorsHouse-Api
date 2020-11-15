@@ -12,6 +12,10 @@ class Video extends Model
 
     protected $table = "video";
 
+    protected $fillable = [
+        'video', 'idPost'
+    ];
+
     public function post()
     {
         return $this->hasOne(Post::class);

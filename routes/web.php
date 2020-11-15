@@ -21,6 +21,8 @@ $router->post('/password/reset', ['as' => 'password.reset', 'uses' => 'ResetPass
 
 $router->get('/users/verify/{token}', ["as" => "verify", "uses" => "UserController@verify"]);
 
+$router->post("/creators/{creatorId}/posts", ["as" => "createPost", "uses" => "PostController@store"]);
+
 //Logged in user routes
 $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
     $router->get("/users/me", "UserController@me");
