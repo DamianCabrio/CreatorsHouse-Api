@@ -49,7 +49,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     //Esta funcion te devuelve el creator para ese usuario relacion 1 a 1
     public function creator()
     {
-        return $this->hasOne(Creator::class);
+        return $this->hasOne(Creator::class, 'idUser');
     }
 
     public function setNameAttribute($name)

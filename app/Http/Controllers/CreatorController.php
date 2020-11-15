@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Creator;
 use App\Models\User;
+use App\Models\Follow;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,10 @@ class CreatorController extends Controller
 
     public function show($id)
     {
+        //$user = User::where("id", "=", $creator['$idUser'])->get();
         $Creator = Creator::findOrFail($id);
+        $Creator['user'] = User::where("id", "=", $Creator['idUser'])->get();;
+        $Creator['cantFollowers'] = Follow::where("idCreator", $id)->get()->count();
         return $this->successResponse($Creator);
     }
 
