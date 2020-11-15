@@ -7,6 +7,7 @@ use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -78,12 +79,15 @@ class UserController extends Controller
         $this->validate($request, $rules);
 
         $check_users = User::where("email", $request->email)->first();
-
         if (@count($check_users) > 0) {
-            $password = $request->password;
-            if (Hash::check($password, $check_users["password"])) {
-                $response["token"] = $check_users->createToken("users")->accessToken;
-                return $this->successResponse($check_users, 200, $response);
+            if ($check_users->isVerified != false) {
+                $password = $request->password;
+                if (Hash::check($password, $check_users["password"])) {
+                    $response["token"] = $check_users->createToken("users")->accessToken;
+                    return $this->successResponse($check_users, 200, $response);
+                }
+            }else{
+                return $this->errorResponse("Tiene que verificar su cuenta", 401);
             }
         } else {
             return $this->errorResponse("El login es incorrecto", 401);
@@ -137,8 +141,9 @@ class UserController extends Controller
         $user = User::where("verification_token", $token)->firstOrFail();
 
         $user->verification_token = null;
+        $user->isVerified = true;
         $user->save();
 
-        return $this->showMessage("The account has been verified succesfully");
+        return Redirect::to("http://localhost:8080?verified=true");
     }
 }
