@@ -138,12 +138,16 @@ class UserController extends Controller
 
     public function verify($token)
     {
-        $user = User::where("verification_token", $token)->firstOrFail();
+        $user = User::where("verification_token", $token)->first();
+
+        if($user == null){
+            return $this->errorResponse("No se pudo verificar el email", 404);
+        }
 
         $user->verification_token = null;
         $user->isVerified = true;
         $user->save();
 
-        return Redirect::to("http://localhost:8080?verified=true");
+        return $this->successResponse("Se verifico el email correctamente",400);
     }
 }
