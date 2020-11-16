@@ -23,16 +23,26 @@ $router->get('/users/verify/{token}', ["as" => "verify", "uses" => "UserControll
 
 $router->post("/creators/{creatorId}/posts", ["as" => "createPost", "uses" => "PostController@store"]);
 
+//Prueba ---------------------
+//$router->get("/follow/{user}/posts", "FollowController@postFollow");
+$router->get(
+    "/following/{idUser}",
+    "FollowController@following"
+);
+//----------------------------------
+
 //Logged in user routes
 $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
     $router->get("/users/me", "UserController@me");
     $router->get("/usercreator/{idUser}", "CreatorController@showOne");
-    $router->get("/follow/{user}/posts", ["as" => "postFollow", "uses" => "FollowController@postFollow"]);
+    $router->get("/following/{idUser}", "FollowController@following");
+    //$router->get("/follow/{user}/posts", "FollowController@postFollow");
+    //$router->get("/follow/{user}/posts", ["as" => "postFollow", "uses" => "FollowController@postFollow"]);
     $router->post("/creators", ["as" => "createCreator", "uses" => "CreatorController@store"]);
 });
 //Muestra todos los Posts de un creator
 $router->get("/postscreator/{creator_id}", "CreatorController@showPostsCreator");
-//Muestra los datos de un creator
+//Muestra los datos de un creator, con cantfollowers y sus datos de user
 $router->get("/creator/{id}", "CreatorController@show");
 
 //Muestra todos los posts de los followers de un user

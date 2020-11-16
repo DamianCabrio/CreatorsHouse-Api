@@ -87,7 +87,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         return $this->admin == true;
     }
 
-    public function isCreator(){
+    public function isCreator()
+    {
         return $this->isCreator == true;
     }
 
