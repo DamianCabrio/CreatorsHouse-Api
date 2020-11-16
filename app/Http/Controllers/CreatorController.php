@@ -84,6 +84,10 @@ class CreatorController extends Controller
     public function showCreatorsHome()
     {
         $check_creators = User::where("isCreator", 1)->get()->random(3);
+        foreach ($check_creators as $creator) {
+            //agregar el id del creator
+            $creator['idCreator'] = Creator::where("idUser", $creator['id'])->get('id');
+        }
         return $this->successResponse($check_creators);
     }
 
