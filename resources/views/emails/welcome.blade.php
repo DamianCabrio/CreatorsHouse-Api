@@ -3,11 +3,11 @@
 
     Gracias por crear una cuenta. Por favor verifique la misma usuando el siguente boton:
 
-
-    @component('mail::button', ['url' => str_replace("{token}?0=","",route("verify",$user->verification_token))])
+    @component('mail::button', ['url' => $url])
         Verificar cuenta
     @endcomponent
 
-    Gracias,<br>
+    Gracias,
     {{ config('app.name') }}
 @endcomponent
+

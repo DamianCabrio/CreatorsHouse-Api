@@ -15,6 +15,10 @@
 
 use Laravel\Lumen\Routing\Router;
 
+$router->post("/payment/pay",["as" => "pay", "uses" => "PaymentController@pay"]);
+$router->get("/payment/approval",["as" => "approval", "uses" => "PaymentController@approval"]);
+$router->get("/payment/cancelled",["as" => "cancelled", "uses" => "PaymentController@cancelled"]);
+
 //Password Resset
 $router->post('/password/reset-request', 'RequestPasswordController@sendResetLinkEmail');
 $router->post('/password/reset', ['as' => 'password.reset', 'uses' => 'ResetPasswordController@reset']);

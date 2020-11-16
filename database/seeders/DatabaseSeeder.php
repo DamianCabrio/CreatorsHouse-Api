@@ -64,6 +64,9 @@ class DatabaseSeeder extends Seeder
         $videosQuantity = 30;
         Video::factory($videosQuantity)->create();
 
+        $this->call(PaymentPlatformsTableSeeder::class);
+        $this->call(CurrenciesTableSeeder::class);
+
 //        Category_Creator::truncate();
 //        Category_Creator::flushEventListeners();
 //        $Category_CreatorQuantity = 5;

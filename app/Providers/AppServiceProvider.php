@@ -25,8 +25,9 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         User::created(function ($user) {
-            retry(5, function () use ($user) {
-                Mail::to($user)->send(new UserCreated($user));
+            $url = "http://localhost:8080/#/login?token=" . $user->verification_token;
+            retry(5, function () use ($user,$url) {
+                Mail::to($user)->send(new UserCreated($user,$url));
             }, 100);
         });
 

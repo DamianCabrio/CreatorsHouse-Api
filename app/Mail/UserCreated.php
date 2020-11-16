@@ -12,15 +12,17 @@ class UserCreated extends Mailable
     use Queueable, SerializesModels;
 
     public $user;
+    public $url;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(User $user)
+    public function __construct(User $user, $url)
     {
         $this->user = $user;
+        $this->url = $url;
     }
 
     /**

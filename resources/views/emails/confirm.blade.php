@@ -3,7 +3,7 @@
 
     Cambio su mail, asi que tenemos que verificar su nuevo email. Por favor use este boton:
 
-    @component('mail::button', ['url' => route("verify",$user->verification_token)])
+    @component('mail::button', ['url' => ""])
         Verificar cuenta
     @endcomponent
 
