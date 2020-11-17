@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Traits\ApiResponser;
+use App\Models\User;
 
 class CategoryController extends Controller
 {
@@ -42,6 +43,11 @@ class CategoryController extends Controller
     {
         $category = Category::find($category_id);
         $cat_creators = $category->creators;
+        foreach ($cat_creators as $creator) {
+            //agregar datos del user
+            $creator['User'] = User::where("id", $creator['idUser'])->get();
+        }
+        $cat_creators['nameCategory'] = Category::where("id", $category_id)->get();
         return json_encode($cat_creators);
     }
 }
