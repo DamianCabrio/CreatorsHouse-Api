@@ -48,9 +48,9 @@ class PostController extends Controller
 
         //TODO VALIDAR CREADOR
 
-        $creator = Creator::findOrFail($creatorId);
+        $creatorLogeado = Creator::where('idUser', '=', $request->user()->id)->firstOrFail();;
 
-        if ($creator->id == $request->user()->id) {
+        if ($creatorId == $creatorLogeado->id) {
             //validación de datos
             $this->validate($request, $rules);
             $fields = $request->except(["video", "imagenes"]);
