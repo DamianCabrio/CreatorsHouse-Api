@@ -21,6 +21,8 @@ $router->post('/password/reset', ['as' => 'password.reset', 'uses' => 'ResetPass
 
 $router->get('/users/verify/{token}', ["as" => "verify", "uses" => "UserController@verify"]);
 
+$router->post("/creators/posts/{creatorId}", ["as" => "createPost", "uses" => "PostController@store"]);
+
 //Prueba ---------------------
 //$router->get("/follow/{user}/posts", "FollowController@postFollow");
 $router->get(
@@ -28,7 +30,7 @@ $router->get(
     "FollowController@following"
 );
 //----------------------------------
-
+$router->get("/usercreator/{idUser}", "CreatorController@showOne");
 //Logged in user routes
 $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
     $router->post("/creators/{creatorId}/posts", ["as" => "createPost", "uses" => "PostController@store"]);
