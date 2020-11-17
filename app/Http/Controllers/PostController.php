@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Creator;
-use App\Models\Image;
 use App\Models\Post;
 use App\Models\Video;
 use App\Traits\ApiResponser;
@@ -51,51 +50,55 @@ class PostController extends Controller
 
         $creator = Creator::findOrFail($creatorId);
 
-        //validación de datos
-        $this->validate($request, $rules);
-        $fields = $request->except(["video", "imagenes"]);
-        $fields["idCreator"] = (int)$creatorId;
-        $fields["isPublic"] = (bool)$fields["isPublic"];
-        $post = Post::create($fields);
+        if ($creator->id == $request->user()->id) {
+            //validación de datos
+            $this->validate($request, $rules);
+            $fields = $request->except(["video", "imagenes"]);
+            $fields["idCreator"] = (int)$creatorId;
+            $fields["isPublic"] = (bool)$fields["isPublic"];
+            $post = Post::create($fields);
 
-        /*         if ($fields["tipo"] == 2 && $request->hasFile("imagenes")) {
+            /*         if ($fields["tipo"] == 2 && $request->hasFile("imagenes")) {
 
-                    $file = $request->file('imagenes')->getClientOriginalName();
-                    $filaName = uniqid() . "_" . $file;
-                    $path = 'photos/';
-                    $destPath = public_path($path);
-                    $request->file('photo')->move($destPath, $filaName);
+                        $file = $request->file('imagenes')->getClientOriginalName();
+                        $filaName = uniqid() . "_" . $file;
+                        $path = 'photos/';
+                        $destPath = public_path($path);
+                        $request->file('photo')->move($destPath, $filaName);
 
-                   $allowedfileExtension = ['jpg', 'png', "jpge"];
-                    $files = $request->file('imagenes');
-                    foreach ($files as $file) {
-                        $extension = $files->getClientOriginalExtension();
+                       $allowedfileExtension = ['jpg', 'png', "jpge"];
+                        $files = $request->file('imagenes');
+                        foreach ($files as $file) {
+                            $extension = $files->getClientOriginalExtension();
 
-                        $check = in_array($extension, $allowedfileExtension);
+                            $check = in_array($extension, $allowedfileExtension);
 
-                        if ($check) {
-                            return $request->imagenes;
-                            foreach ($request->imagenes as $mediaFiles) {
+                            if ($check) {
+                                return $request->imagenes;
+                                foreach ($request->imagenes as $mediaFiles) {
 
-                                $path = $mediaFiles->store("images/" . $creator->username . "/" . $post->id);
+                                    $path = $mediaFiles->store("images/" . $creator->username . "/" . $post->id);
 
-                                Image::create([
-                                    'idPost' => $post->id,
-                                    'image' => $path
-                                ]);
+                                    Image::create([
+                                        'idPost' => $post->id,
+                                        'image' => $path
+                                    ]);
+                                }
+                            } else {
+                                return $this->errorResponse("Formato Invalido", 422);
                             }
-                        } else {
-                            return $this->errorResponse("Formato Invalido", 422);
-                        }
-                    }*/
-        //}
-        if ($fields["tipo"] == 3) {
-            Video::create([
-                'idPost' => $post->id,
-                'video' => $request->video
-            ]);
+                        }*/
+            //}
+            if ($fields["tipo"] == 3) {
+                Video::create([
+                    'idPost' => $post->id,
+                    'video' => $request->video
+                ]);
+            }
+            return $this->successResponse($post, 201);
+        } else {
+            return $this->errorResponse("No podes hacer eso, capo", 404);
         }
-        return $this->successResponse($post, 201);
     }
 
     public function update(Request $request, $id)
