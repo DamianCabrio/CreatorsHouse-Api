@@ -15,8 +15,6 @@
 
 use Laravel\Lumen\Routing\Router;
 
-$router->get("/mercado-pago/callback","CallbackController@store");
-
 //Password Resset
 $router->post('/password/reset-request', 'RequestPasswordController@sendResetLinkEmail');
 $router->post('/password/reset', ['as' => 'password.reset', 'uses' => 'ResetPasswordController@reset']);
@@ -35,6 +33,7 @@ $router->get(
 $router->get("/usercreator/{idUser}", "CreatorController@showOne");
 //Logged in user routes
 $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
+    $router->get("/mercado-pago/callback","CallbackController@store");
     $router->post("/creators/{creatorId}/posts", ["as" => "createPost", "uses" => "PostController@store"]);
     $router->get("/users/me", "UserController@me");
     $router->get("/usercreator/{idUser}", "CreatorController@showOne");
