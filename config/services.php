@@ -20,6 +20,12 @@ return [
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
 
+    "mercado_pago" => [
+        "redirect_uri" => env("MERCADO_PAGO_REDIRECT_URI"),
+        "base_api_url" => env("MERCADO_PAGO_BASE_API_URI"),
+        "access_token" => env("MERCADO_PAGO_ACCESS_TOKEN"),
+    ],
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],

@@ -15,6 +15,8 @@
 
 use Laravel\Lumen\Routing\Router;
 
+$router->get("/mercado-pago/callback","CallbackController@store");
+
 //Password Resset
 $router->post('/password/reset-request', 'RequestPasswordController@sendResetLinkEmail');
 $router->post('/password/reset', ['as' => 'password.reset', 'uses' => 'ResetPasswordController@reset']);

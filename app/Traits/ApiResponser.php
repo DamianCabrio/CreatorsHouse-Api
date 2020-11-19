@@ -43,7 +43,8 @@ trait ApiResponser
      */
     public function successResponse($data, $code = Response::HTTP_OK, $tokenData = null)
     {
-        return isset($tokenData) ? response()->json(["data" => $data, "tokenData" => $tokenData], $code) : response()->json(["data" => $data], $code);
+        return isset($tokenData) ? response()->json(["data" => $data, "tokenData" => $tokenData], $code)->header("Content-Type", "application/json") :
+            response()->json(["data" => $data], $code)->header("Content-Type", "application/json");
     }
 
     /**
