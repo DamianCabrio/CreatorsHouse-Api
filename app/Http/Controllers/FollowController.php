@@ -59,12 +59,13 @@ class FollowController extends Controller
         $user = User::findOrFail($idUser);
         $following = $user->followers;
         foreach ($following as $follow) {
-            //Datos del user
-            $following['user'] = $follow->user;
+
             //Datos del creator
             //$following['creator'] = $follow->creator;
 
             $creator = $follow->creator;
+            //Datos del user
+            $following['user'] = User::where('id', $creator['idUser'])->get();
 
             //Datos de los posts con images, videos, cant likes
             $postsCreator = $creator->posts;
