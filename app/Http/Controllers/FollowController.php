@@ -65,7 +65,7 @@ class FollowController extends Controller
 
             $creator = $follow->creator;
             //Datos del user
-            $following['user'] = User::where('id', $creator['idUser'])->get();
+            $follow['user'] = User::where('id', $creator['idUser'])->get();
 
             //Datos de los posts con images, videos, cant likes
             $postsCreator = $creator->posts;
