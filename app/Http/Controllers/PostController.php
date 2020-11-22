@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Creator;
+use App\Models\Image;
 use App\Models\Post;
 use App\Models\Video;
 use App\Traits\ApiResponser;
@@ -44,11 +45,10 @@ class PostController extends Controller
             'isPublic' => 'required|boolean',
             "video" => "url|required_if:tipo,==,3",
             "imagenes" => "required_if:tipo,==,2",
+            "imagenes.*" => "image|mimes:jpeg,png,jpg,gif,svg|max:2048"
         ];
 
-        //TODO VALIDAR CREADOR
-
-        $creatorLogeado = Creator::where('idUser', '=', $request->user()->id)->firstOrFail();;
+        $creatorLogeado = Creator::where('idUser', '=', $request->user()->id)->firstOrFail();
 
         if ($creatorId == $creatorLogeado->id) {
             //validación de datos
@@ -58,37 +58,19 @@ class PostController extends Controller
             $fields["isPublic"] = (bool)$fields["isPublic"];
             $post = Post::create($fields);
 
-            /*         if ($fields["tipo"] == 2 && $request->hasFile("imagenes")) {
+            if ($fields["tipo"] == 2 && $request->hasfile("imagenes")) {
+                $path = "images/creators/" . $creatorLogeado->id . "/posts/" . $post->id;
 
-                        $file = $request->file('imagenes')->getClientOriginalName();
-                        $filaName = uniqid() . "_" . $file;
-                        $path = 'photos/';
-                        $destPath = public_path($path);
-                        $request->file('photo')->move($destPath, $filaName);
+                foreach ($request->file('imagenes') as $file) {
+                    $fileName = uniqid() . "_" . $file->getClientOriginalName();
+                    $file->move($path, $fileName);
 
-                       $allowedfileExtension = ['jpg', 'png', "jpge"];
-                        $files = $request->file('imagenes');
-                        foreach ($files as $file) {
-                            $extension = $files->getClientOriginalExtension();
-
-                            $check = in_array($extension, $allowedfileExtension);
-
-                            if ($check) {
-                                return $request->imagenes;
-                                foreach ($request->imagenes as $mediaFiles) {
-
-                                    $path = $mediaFiles->store("images/" . $creator->username . "/" . $post->id);
-
-                                    Image::create([
-                                        'idPost' => $post->id,
-                                        'image' => $path
-                                    ]);
-                                }
-                            } else {
-                                return $this->errorResponse("Formato Invalido", 422);
-                            }
-                        }*/
-            //}
+                    Image::create([
+                        "image" => $path . "/" . $fileName,
+                        "idPost" => $post->id
+                    ]);
+                }
+            }
             if ($fields["tipo"] == 3) {
                 Video::create([
                     'idPost' => $post->id,

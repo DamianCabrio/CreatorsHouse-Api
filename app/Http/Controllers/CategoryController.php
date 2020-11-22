@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Traits\ApiResponser;
 use App\Models\User;
+use App\Traits\ApiResponser;
 
 class CategoryController extends Controller
 {

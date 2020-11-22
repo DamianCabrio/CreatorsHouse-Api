@@ -13,7 +13,7 @@ class Post extends Model
     protected $table = "post";
 
     protected $fillable = [
-        'content', 'title', 'tipo', 'isPublic',"idCreator"
+        'content', 'title', 'tipo', 'isPublic', "idCreator"
     ];
 
 

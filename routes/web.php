@@ -33,7 +33,7 @@ $router->get(
 $router->get("/usercreator/{idUser}", "CreatorController@showOne");
 //Logged in user routes
 $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
-    $router->get("/mercado-pago/callback","CallbackController@store");
+    $router->get("/mercado-pago/callback", "CallbackController@store");
     $router->post("/creators/{creatorId}/posts", ["as" => "createPost", "uses" => "PostController@store"]);
     $router->get("/users/me", "UserController@me");
     $router->get("/usercreator/{idUser}", "CreatorController@showOne");
@@ -41,6 +41,7 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
     //$router->get("/follow/{user}/posts", "FollowController@postFollow");
     //$router->get("/follow/{user}/posts", ["as" => "postFollow", "uses" => "FollowController@postFollow"]);
     $router->post("/creators", ["as" => "createCreator", "uses" => "CreatorController@store"]);
+    $router->put("/creators/{id}", ["as" => "updateCreator", "uses" => "CreatorController@update"]);
 });
 //Muestra todos los Posts de un creator
 $router->get("/postscreator/{creator_id}", "CreatorController@showPostsCreator");

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Creator;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -17,12 +16,14 @@ class MercadoPagoAccessToken extends Model
         "expires_in"
     ];
 
-    public function creator() : BelongsTo {
-        return $this->belongsTo(Creator::class);
+    public static function alreadyExists($idCreador)
+    {
+        return MercadoPagoAccessToken::where('idCreador', '=', $idCreador)->first();
     }
 
-    public static function alreadyExists($idCreador){
-        return MercadoPagoAccessToken::where('idCreador', '=', $idCreador)->first();
+    public function creator(): BelongsTo
+    {
+        return $this->belongsTo(Creator::class);
     }
 
 }

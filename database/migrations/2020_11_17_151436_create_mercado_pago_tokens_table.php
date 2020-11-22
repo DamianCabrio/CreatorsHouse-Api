@@ -15,13 +15,13 @@ class CreateMercadoPagoTokensTable extends Migration
     {
         Schema::create('mercado_pago_tokens', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("idCreador")->unique();
+            $table->foreignId("id_creator")->unique();
             $table->integer("expires_in");
             $table->string("access_token");
             $table->string("refresh_token")->nullable();
             $table->timestamps();
 
-            $table->foreign("idCreador")->references("id")->on("creator");
+            $table->foreign("id_creator")->references("id")->on("creator");
         });
     }
 

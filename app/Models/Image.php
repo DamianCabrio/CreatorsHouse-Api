@@ -12,6 +12,10 @@ class Image extends Model
 
     protected $table = "image";
 
+    protected $fillable = [
+        'image', 'idPost'
+    ];
+
     public function post()
     {
         return $this->hasOne(Post::class, 'idPost');

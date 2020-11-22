@@ -6,9 +6,7 @@ use App\Models\Creator;
 use App\Models\MercadoPagoAccessToken;
 use App\Services\MercadoPagoService;
 use App\Traits\ApiResponser;
-use GuzzleHttp\Client;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class CallbackController extends Controller
 {
@@ -26,7 +24,7 @@ class CallbackController extends Controller
 
     public function store(Request $request)
     {
-        if (isset($request->code) && $request->code != null) {
+        if ($request->has("code")) {
 
             $myBody["client_secret"] = config("services.mercado_pago.access_token");
             $myBody["grant_type"] = "authorization_code";
@@ -37,7 +35,7 @@ class CallbackController extends Controller
 
             $checkIfExiste = MercadoPagoAccessToken::alreadyExists($loggedInCreator->id);
 
-            if($checkIfExiste != null){
+            if ($checkIfExiste != null) {
                 $checkIfExiste->delete();
             }
 
@@ -48,29 +46,31 @@ class CallbackController extends Controller
             $fields["access_token"] = $response->access_token;
             //$fields["refresh_token"] = $response->refesh_token;
 
-             $token = MercadoPagoAccessToken::create($fields);
+            $token = MercadoPagoAccessToken::create($fields);
 
-             if($token != null){
-                 return $this->showMessage("El token fue creado con exito");
-             }else{
-                 return $this->errorResponse("Ocurrio un error",404);
-             }
+            if ($token != null) {
+                return $this->showMessage("El token fue creado con exito");
+            } else {
+                return $this->errorResponse("Ocurrio un error", 404);
+            }
 
-/*            $client = new Client();
+            /*            $client = new Client();
 
-           $myBody["client_secret"] = config("services.mercado_pago.access_token");
-            $myBody["grant_type"] = "authorization_code";
-            $myBody["code"] = $request->code;
-            $myBody["redirect_uri"] = config("services.mercado_pago.redirect_uri");
+                       $myBody["client_secret"] = config("services.mercado_pago.access_token");
+                        $myBody["grant_type"] = "authorization_code";
+                        $myBody["code"] = $request->code;
+                        $myBody["redirect_uri"] = config("services.mercado_pago.redirect_uri");
 
-            $response = $client->request("POST", config("services.mercado_pago.base_url_api") . "oauth/token", ["form_params" => $request->all()]);
+                        $response = $client->request("POST", config("services.mercado_pago.base_url_api") . "oauth/token", ["form_params" => $request->all()]);
 
-            dd($response->getBody()->getContents());
+                        dd($response->getBody()->getContents());
 
-             $loggedInUser = $request->user();
-            $loggedInCreator = Creator::findOrFail($loggedInUser->id);
-            $loggedInCreator->tokenMercadoPago = $request->code;
-            $loggedInCreator->save();*/
+                         $loggedInUser = $request->user();
+                        $loggedInCreator = Creator::findOrFail($loggedInUser->id);
+                        $loggedInCreator->tokenMercadoPago = $request->code;
+                        $loggedInCreator->save();*/
+        } else {
+            return $this->errorResponse("Ha ocurrido un error, por favor intenta mas tarde", 422);
         }
     }
 }
