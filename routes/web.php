@@ -29,11 +29,16 @@ $router->get(
     "/following/{idUser}",
     "FollowController@following"
 );
+$router->get(
+    "/postsPublic/{idUser}",
+    "FollowController@postsPublic"
+);
+
 //----------------------------------
 $router->get("/usercreator/{idUser}", "CreatorController@showOne");
 //Logged in user routes
 $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
-    $router->get("/mercado-pago/callback","CallbackController@store");
+    $router->get("/mercado-pago/callback", "CallbackController@store");
     $router->post("/creators/{creatorId}/posts", ["as" => "createPost", "uses" => "PostController@store"]);
     $router->get("/users/me", "UserController@me");
     $router->get("/usercreator/{idUser}", "CreatorController@showOne");
