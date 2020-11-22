@@ -29,6 +29,11 @@ $router->get(
     "/following/{idUser}",
     "FollowController@following"
 );
+$router->get(
+    "/postsPublic/{idUser}",
+    "FollowController@postsPublic"
+);
+
 //----------------------------------
 $router->get("/usercreator/{idUser}", "CreatorController@showOne");
 //Logged in user routes

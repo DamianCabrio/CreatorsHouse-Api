@@ -80,6 +80,42 @@ class FollowController extends Controller
         return json_encode($following);
     }
 
+    //Todos los post publicos de los creadores a los que sigue un usuario
+    public function postsPublic($idUser)
+    {
+        $user = User::findOrFail($idUser);
+        $following = $user->followers;
+
+        foreach ($following as $follow) {
+            //Datos del user
+            //$follow['user'] = User::where('id', $follow['idUser'])->get();
+
+
+            $posts = Post::where('isPublic', 1);
+            $posts = $posts->where('idCreator', $follow['idCreator'])->get();
+
+            $follow['posts'] = $posts;
+            /* $creator = $follow->creator;
+            
+            //Datos de los posts con images, videos, cant likes
+            $postsCreator = $creator->posts;*/
+            //recorrer el json, si es tipo 1 text- tipo 2 images- tipo 3 videos
+            foreach ($posts as $unPost) {
+
+                $creator = Creator::findOrFail($unPost['idCreator']);
+
+                $unPost['user'] = User::where('id', $creator['idUser'])->get();
+                //carga imagenes del post $unPost.cantidadLikes = $cantidadLikes;
+                $unPost['images'] = $unPost->images;
+                //carga videos del post
+                $unPost['videos'] = $unPost->videos;
+                //carga cantidad de likes del post? o likes del post?
+                $unPost['cantLikes'] = $unPost->likes->count();
+            }
+        }
+        return json_encode($following);
+    }
+
     /*     public function postFollow($user)
     {
         $creatorFollows = Follow::where("idUser", $user)->get();
