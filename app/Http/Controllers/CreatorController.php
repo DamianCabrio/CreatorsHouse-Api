@@ -45,7 +45,7 @@ class CreatorController extends Controller
             'description' => 'required|max:255',
             'instagram' => 'URL',
             'youtube' => 'URL',
-            'costVip' => 'min:0',
+            'costVip' => 'required|min:0',
             "categories.*" => "required|exists:category",
         ];
 
@@ -54,10 +54,25 @@ class CreatorController extends Controller
 
         $fields = $request->all();
         $fields["idUser"] = $request->user()->id;
-        $creator = Creator::create($fields);
+
+        //Verifica que exista la category
         $categories = explode(",", $fields["categories"]);
         $category = Category::findOrFail($categories);
-        $creator->categories()->attach($category);
+
+
+        if ($category) {
+
+            //Alta del nuevo creador
+            $creator = Creator::create($fields);
+            //Falta agregar a tabla categorias x creador
+            $creator->categories()->attach($category);
+
+            //Falta cambiar el user.isCreator = 1
+            $user = User::where("id", $fields["idUser"])->first();
+            $user->isCreator = true;
+            $user->save();
+        }
+
 
         return $this->successResponse($creator, 201);
     }
