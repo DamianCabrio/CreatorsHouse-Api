@@ -6,6 +6,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Creator extends Model
@@ -49,19 +50,8 @@ class Creator extends Model
         return $this->hasMany(Follow::class, 'idCreator');
     }
 
-    public function images()
+    public function mercadoPagoAccessTokens(): HasOne
     {
-        return $this->hasManyThrough(Image::class, Post::class, 'idCreator', 'idPost');
-        //return $this->hasManyThrough('App\Resource', 'App\Class');
-    }
-
-    public function videos()
-    {
-        return $this->hasManyThrough(Video::class, Post::class, 'idCreator', 'idPost');
-    }
-
-    public function likes()
-    {
-        return $this->hasManyThrough(Like::class, Post::class, 'idCreator', 'idPost');
+        return $this->hasOne(MercadoPagoAccessToken::class);
     }
 }

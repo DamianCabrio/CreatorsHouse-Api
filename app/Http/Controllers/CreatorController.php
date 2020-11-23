@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Creator;
-use App\Models\User;
 use App\Models\Follow;
+use App\Models\User;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class CreatorController extends Controller
 {
@@ -75,6 +76,46 @@ class CreatorController extends Controller
 
 
         return $this->successResponse($creator, 201);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $rules = [
+            'banner' => 'image|mimes:jpg,png,jpeg|max:2048',
+            'description' => 'max:255',
+            'instagram' => 'URL',
+            'youtube' => 'URL',
+            'costVip' => 'min:0',
+            "categories.*" => "exists:category",
+        ];
+
+
+        if ($request->user()->id != $id) {
+            //validación de datos
+            $this->validate($request, $rules);
+
+            $creator = Creator::findOrFail($id);
+            $fields = $request->all();
+
+            if ($request->has("banner")) {
+                $file = $request->file('banner');
+                $path = "images/creators/" . $creator->id . "/profile/banner";
+                $fileName = uniqid() . "_" . $file->getClientOriginalName();
+                $file->move($path, $fileName);
+                $fields["banner"] = $path . "/" . $fileName;
+            }
+
+            $creator->fill($fields);
+
+            if ($creator->isClean()) {
+                return $this->errorResponse("At least one value must change", Response::HTTP_UNPROCESSABLE_ENTITY);
+            }
+
+            $creator->save();
+            return $this->successResponse($creator);
+        } else {
+            return $this->errorResponse("No puede realizar esta accion", 401);
+        }
     }
 
     public function showOne($idUser)
