@@ -6,6 +6,8 @@ use App\Models\Follow;
 use App\Models\User;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Creator;
 
 
 class FollowController extends Controller
