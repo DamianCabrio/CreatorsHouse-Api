@@ -33,6 +33,10 @@ $router->get(
     "/postsPublic/{idUser}",
     "FollowController@postsPublic"
 );
+$router->get(
+    "/postsPremium/{idUser}",
+    "FollowController@postsPremium"
+);
 
 //----------------------------------
 $router->get("/usercreator/{idUser}", "CreatorController@showOne");
