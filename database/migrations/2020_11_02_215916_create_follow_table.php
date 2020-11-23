@@ -14,6 +14,7 @@ class CreateFollowTable extends Migration
     public function up()
     {
         Schema::create('follow', function (Blueprint $table) {
+            $table->id();
             $table->foreignId("idUser");
             $table->foreignId("idCreator");
             $table->boolean("isVip");
