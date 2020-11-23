@@ -6,6 +6,8 @@ use App\Models\Follow;
 use App\Models\User;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Creator;
 
 
 class FollowController extends Controller
@@ -87,19 +89,41 @@ class FollowController extends Controller
         $following = $user->followers;
 
         foreach ($following as $follow) {
-            //Datos del user
-            //$follow['user'] = User::where('id', $follow['idUser'])->get();
-
 
             $posts = Post::where('isPublic', 1);
             $posts = $posts->where('idCreator', $follow['idCreator'])->get();
 
             $follow['posts'] = $posts;
-            /* $creator = $follow->creator;
-            
-            //Datos de los posts con images, videos, cant likes
-            $postsCreator = $creator->posts;*/
-            //recorrer el json, si es tipo 1 text- tipo 2 images- tipo 3 videos
+
+            foreach ($posts as $unPost) {
+
+                $creator = Creator::findOrFail($unPost['idCreator']);
+
+                $unPost['user'] = User::where('id', $creator['idUser'])->get();
+                //carga imagenes del post $unPost.cantidadLikes = $cantidadLikes;
+                $unPost['images'] = $unPost->images;
+                //carga videos del post
+                $unPost['videos'] = $unPost->videos;
+                //carga cantidad de likes del post? o likes del post?
+                $unPost['cantLikes'] = $unPost->likes->count();
+            }
+        }
+        return json_encode($following);
+    }
+
+    //Todos los post premium de los creadores a los que sigue un usuario y esVip
+    public function postsPremium($idUser)
+    {
+        $user = User::findOrFail($idUser);
+        $following = $user->followers->where('isVip', 1);
+
+        foreach ($following as $follow) {
+
+            $posts = Post::where('isPublic', 0);
+            $posts = $posts->where('idCreator', $follow['idCreator'])->get();
+
+            $follow['posts'] = $posts;
+
             foreach ($posts as $unPost) {
 
                 $creator = Creator::findOrFail($unPost['idCreator']);
