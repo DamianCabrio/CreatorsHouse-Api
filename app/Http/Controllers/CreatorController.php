@@ -60,11 +60,19 @@ class CreatorController extends Controller
         $categories = explode(",", $fields["categories"]);
         $category = Category::findOrFail($categories);
 
-
         if ($category) {
-
             //Alta del nuevo creador
             $creator = Creator::create($fields);
+
+            if ($request->has("banner")) {
+                $file = $request->file('banner');
+                $path = "images/creators/" . $creator->id . "/profile/banner";
+                $fileName = uniqid() . "_" . $file->getClientOriginalName();
+                $file->move($path, $fileName);
+                $bannerFullPath = $path . "/" . $fileName;
+                $creator["banner"] = $bannerFullPath;
+            }
+
             //Falta agregar a tabla categorias x creador
             $creator->categories()->attach($category);
 

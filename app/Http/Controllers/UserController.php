@@ -108,6 +108,14 @@ class UserController extends Controller
         $this->validate($request, $rules);
 
         $user = User::findOrFail($id);
+        $file = $request->file('avatar');
+        $path = "images/users/" . $user->id . "/avatar";
+        $fileName = uniqid() . "_" . $file->getClientOriginalName();
+        $file->move($path, $fileName);
+
+        $fields = $request->all();
+        $fields["avatar"] = $path . "/" . $fileName;
+
         $user->fill($request->all());
 
         if ($request->has("password")) {

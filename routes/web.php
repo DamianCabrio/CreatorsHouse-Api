@@ -47,6 +47,8 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
     $router->get("/users/me", "UserController@me");
     $router->get("/usercreator/{idUser}", "CreatorController@showOne");
     $router->get("/following/{idUser}", "FollowController@following");
+    $router->post("/follow/{idUser}/{idCreator}", "FollowController@store");
+    $router->post("/unfollow/{idUser}/{idCreator}", "FollowController@delete");
     //$router->get("/follow/{user}/posts", "FollowController@postFollow");
     //$router->get("/follow/{user}/posts", ["as" => "postFollow", "uses" => "FollowController@postFollow"]);
     $router->post("/creators", ["as" => "createCreator", "uses" => "CreatorController@store"]);

@@ -8,6 +8,7 @@ use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Creator;
+use Illuminate\Support\Facades\Http;
 
 
 class FollowController extends Controller
@@ -36,9 +37,36 @@ class FollowController extends Controller
         return $this->successResponse($Follow);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $idUser, $idCreator)
     {
-        //TODO Implementar
+
+        $user = User::findOrFail($idUser);
+        $creator = Creator::findOrFail($idCreator);
+
+        if(!is_null($user) && !is_null($creator)){
+            if ($idUser == $request->user()->id) {
+                $fields["idCreator"] = $request->idCreator;
+                $fields["idUser"] = $request->user()->id;
+                $fields["isVip"] = false;
+
+                $alreadyFollow = Follow::where([["idCreator", "=", $idCreator],["idUser", "=", $idUser]])->withTrashed()->first();
+                if(is_null($alreadyFollow)){
+                        $follow = Follow::create($fields);
+                        $follow->save();
+                    return $this->successResponse("Siguio al creador con exito",400);
+                }elseif($alreadyFollow->deleted_at != null){
+                    $alreadyFollow->restore();
+                    return $this->successResponse("Siguio al creador con exito",400);
+                }
+                else{
+                    return $this->errorResponse("Usted ya sige a este creador", 403);
+                }
+            }else{
+                return $this->errorResponse("Usted no puede realizar esta acción", 403);
+            }
+        }else{
+            return $this->errorResponse("El usuario o creador no existe", 404);
+        }
     }
 
     public function update(Request $request, $id)
@@ -46,10 +74,26 @@ class FollowController extends Controller
         //TODO Implementar
     }
 
-    public function delete($id)
+    public function delete(Request $request, $idUser, $idCreator)
     {
-        $Follow = Follow::findOrFail($id);
-        $Follow->delete();
+        $user = User::findOrFail($idUser);
+        $creator = Creator::findOrFail($idCreator);
+
+        if(!is_null($user) && !is_null($creator)){
+            if ($idUser == $request->user()->id) {
+                $alreadyFollow = Follow::where([["idCreator", "=", $idCreator],["idUser", "=", $idUser]])->first();
+                if(!is_null($alreadyFollow) && $alreadyFollow->deleted_at == null){
+                    $alreadyFollow->delete();
+                    return $this->successResponse("Ya no sigue mas a este creador",400);
+                }else{
+                    return $this->errorResponse("Usted no sigue a este creador", 403);
+                }
+            }else{
+                return $this->errorResponse("Usted no puede realizar esta acción", 403);
+            }
+        }else{
+            return $this->errorResponse("El usuario o creador no existe", 404);
+        }
         return $this->successResponse($Follow);
     }
 

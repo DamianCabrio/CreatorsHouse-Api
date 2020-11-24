@@ -44,7 +44,6 @@ class CallbackController extends Controller
             $fields["idCreador"] = $loggedInCreator->id;
             $fields["expires_in"] = $response->expires_in;
             $fields["access_token"] = $response->access_token;
-            //$fields["refresh_token"] = $response->refesh_token;
 
             $token = MercadoPagoAccessToken::create($fields);
 
@@ -53,22 +52,6 @@ class CallbackController extends Controller
             } else {
                 return $this->errorResponse("Ocurrio un error", 404);
             }
-
-            /*            $client = new Client();
-
-                       $myBody["client_secret"] = config("services.mercado_pago.access_token");
-                        $myBody["grant_type"] = "authorization_code";
-                        $myBody["code"] = $request->code;
-                        $myBody["redirect_uri"] = config("services.mercado_pago.redirect_uri");
-
-                        $response = $client->request("POST", config("services.mercado_pago.base_url_api") . "oauth/token", ["form_params" => $request->all()]);
-
-                        dd($response->getBody()->getContents());
-
-                         $loggedInUser = $request->user();
-                        $loggedInCreator = Creator::findOrFail($loggedInUser->id);
-                        $loggedInCreator->tokenMercadoPago = $request->code;
-                        $loggedInCreator->save();*/
         } else {
             return $this->errorResponse("Ha ocurrido un error, por favor intenta mas tarde", 422);
         }

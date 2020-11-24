@@ -12,6 +12,12 @@ class Follow extends Model
 
     protected $table = "follow";
 
+    protected $fillable = [
+        "idUser",
+        "idCreator",
+        "isVip"
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class, 'idUser');
