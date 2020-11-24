@@ -20,6 +20,7 @@ class CreateCreatorTable extends Migration
             $table->string("instagram");
             $table->string("youtube");
             $table->float("costVip");
+            $table->boolean("hasMercadoPago")->default(false);
             $table->foreignId("idUser")->unique();
             $table->timestamps();
             $table->softDeletes();

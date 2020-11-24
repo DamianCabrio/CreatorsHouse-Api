@@ -7,6 +7,7 @@ use App\Models\MercadoPagoAccessToken;
 use App\Services\MercadoPagoService;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
+use MercadoPago;
 
 class CallbackController extends Controller
 {
@@ -46,7 +47,8 @@ class CallbackController extends Controller
             $fields["access_token"] = $response->access_token;
 
             $token = MercadoPagoAccessToken::create($fields);
-
+            $loggedInCreator["hasMercadoPago"] = true;
+            $loggedInCreator->save();
             if ($token != null) {
                 return $this->showMessage("El token fue creado con exito");
             } else {
@@ -55,5 +57,9 @@ class CallbackController extends Controller
         } else {
             return $this->errorResponse("Ha ocurrido un error, por favor intenta mas tarde", 422);
         }
+    }
+
+    public function createPayment(Request $request){
+        MercadoPago\SDK::setAccessToken();
     }
 }
