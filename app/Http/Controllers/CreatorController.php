@@ -71,12 +71,12 @@ class CreatorController extends Controller
                 $file->move($path, $fileName);
                 $bannerFullPath = $path . "/" . $fileName;
                 $creator["banner"] = $bannerFullPath;
+                $creator->save();
             }
 
             //Falta agregar a tabla categorias x creador
             $creator->categories()->attach($category);
 
-            //Falta cambiar el user.isCreator = 1
             $user = User::where("id", $fields["idUser"])->first();
             $user->isCreator = true;
             $user->save();
