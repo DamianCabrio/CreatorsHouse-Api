@@ -42,7 +42,7 @@ class CreatorController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'banner' => 'mimes:jpeg,bmp,png',
+            'banner' => 'mimes:jpeg,bmp,png,jpg',
             'description' => 'required|max:255',
             'instagram' => 'URL',
             'youtube' => 'URL',
