@@ -39,6 +39,34 @@ class CreatorController extends Controller
         return $this->successResponse($Creator);
     }
 
+    // Solo guardar el banner
+    public function storeBanner(Request $request)
+    {
+        /*  $rules = [
+            'banner' => 'mimes:jpeg,bmp,png,jpg',
+        ]; */
+
+        //validación de datos
+        //$this->validate($request, $rules);
+
+        $fields = $request->all();
+        //$fields["idUser"] = $request->user()->id;
+
+        //Alta del nuevo creador
+        //$creator = Creator::create($fields);
+
+        if ($request->has("banner")) {
+            $file = $request->file('banner');
+            $path = "images/creators/" . 1 . "/profile/banner";
+            $fileName = uniqid() . "_" . $file->getClientOriginalName();
+            $file->move($path, $fileName);
+            $bannerFullPath = $path . "/" . $fileName;
+            /* $creator["banner"] = $bannerFullPath;
+                $creator->save(); */
+        }
+        return $this->successResponse('Se guardo', 201);
+    }
+
     public function store(Request $request)
     {
         $rules = [
