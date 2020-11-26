@@ -37,6 +37,11 @@ $router->get(
     "/postsPremium/{idUser}",
     "FollowController@postsPremium"
 );
+$router->post(
+    "/upload",
+    "CreatorController@upload"
+);
+
 
 //----------------------------------
 $router->get("/usercreator/{idUser}", "CreatorController@showOne");

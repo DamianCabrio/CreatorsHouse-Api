@@ -40,32 +40,26 @@ class CreatorController extends Controller
     }
 
     // Solo guardar el banner
-    public function storeBanner(Request $request)
+    public function upload(Request $request)
     {
-        /*  $rules = [
-            'banner' => 'mimes:jpeg,bmp,png,jpg',
-        ]; */
 
-        //validación de datos
-        //$this->validate($request, $rules);
+        // $files = $request->file;
+        $request->file->storeAs('uploads', uniqid('img_') . $request->file->getClientOriginalName());
+        // image will be stored at storage/app/public/uploads
+        // return $request;
+        // if (!empty($files)) {
+        //     foreach ($files as $file) {
+        //         Storage::put($file - getClientOriginalName(), file_get_contents($file));
+        //         return ['file' => $file];
+        //     }
+        // }
 
-        $fields = $request->all();
-        //$fields["idUser"] = $request->user()->id;
-
-        //Alta del nuevo creador
-        //$creator = Creator::create($fields);
-
-        if ($request->has("banner")) {
-            $file = $request->file('banner');
-            $path = "images/creators/" . 1 . "/profile/banner";
-            $fileName = uniqid() . "_" . $file->getClientOriginalName();
-            $file->move($path, $fileName);
-            $bannerFullPath = $path . "/" . $fileName;
-            /* $creator["banner"] = $bannerFullPath;
-                $creator->save(); */
-        }
-        return $this->successResponse('Se guardo', 201);
+        return response()->json([
+            'request' => $request,
+            'message' => 'Se guardo la imagen',
+        ]);
     }
+
 
     public function store(Request $request)
     {
