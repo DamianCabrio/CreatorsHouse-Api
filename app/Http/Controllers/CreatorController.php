@@ -44,7 +44,7 @@ class CreatorController extends Controller
     {
 
         // $files = $request->file;
-        $request->file->storeAs('uploads', uniqid('img_') . $request->file->getClientOriginalName());
+        //$request->file->storeAs('uploads', uniqid('img_') . $request->file->getClientOriginalName());
         // image will be stored at storage/app/public/uploads
         // return $request;
         // if (!empty($files)) {
@@ -53,6 +53,12 @@ class CreatorController extends Controller
         //         return ['file' => $file];
         //     }
         // }
+
+        $file = $request->file('banner');
+        $path = "uploads/profile/banner";
+        $fileName = uniqid() . "_" . $file->getClientOriginalName();
+        $file->move($path, $fileName);
+        $bannerFullPath = $path . "/" . $fileName;
 
         return response()->json([
             'request' => $request,
