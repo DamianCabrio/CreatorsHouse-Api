@@ -56,7 +56,7 @@ class CreatorController extends Controller
 
         $file = $request->file('banner');
         $path = "uploads/profile/banner";
-        $fileName = uniqid() . "_" . $file->getClientOriginalName();
+        $fileName = uniqid() . "_" . 'prueba2.jpg';
         $file->move($path, $fileName);
         $bannerFullPath = $path . "/" . $fileName;
 
