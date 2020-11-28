@@ -42,7 +42,7 @@ class CreatorController extends Controller
     // Solo guardar el banner
     public function upload(Request $request)
     {
-        $file = $request->file('banner');
+        /* $file = $request->file('banner');
         $idCreator = $request->idCreator;
         $path = "images/creators/" . $idCreator . "/profile/banner";
         $fileName = uniqid() . "_" . $file->getClientOriginalName();
@@ -51,6 +51,36 @@ class CreatorController extends Controller
         $creator = Creator::where("id", $idCreator)->first();
         $creator["banner"] = $path . '/' . $fileName;
         $creator->save();
+
+        return $this->successResponse($creator); */
+
+        $file = $request->file('banner');
+        $filename = uniqid() . "_" . $file->getClientOriginalName();
+        $idCreator = $request->idCreator;
+        $creator = Creator::where("id", $idCreator)->first();
+        // Valid file extensions
+        $valid_extensions = array("jpg", "jpeg", "png", "pdf");
+
+        // File extension
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+
+        // Check extension
+        if (in_array(strtolower($extension), $valid_extensions)) {
+            $path = "images/creators/" . $idCreator . "/profile/banner/";
+            // Upload file
+            if ($file->move($path, $filename)) {
+
+
+                $creator["banner"] = $path . $filename;
+                $creator->save();
+
+                echo ('Se guardo el banner');
+            } else {
+                echo ('Error no se guardo');
+            }
+        } else {
+            echo ('Extension invalida');
+        }
 
         return $this->successResponse($creator);
     }

@@ -37,6 +37,12 @@ class FollowController extends Controller
         return $this->successResponse($Follow);
     }
 
+    public function isFollow($idUser, $idCreator)
+    {
+        $Follow = Follow::where("idCreator", $idCreator)->where("idUser", $idUser)->get();
+        return $this->successResponse($Follow);
+    }
+
     public function store(Request $request, $idUser, $idCreator)
     {
 
@@ -93,7 +99,7 @@ class FollowController extends Controller
         } else {
             return $this->errorResponse("El usuario o creador no existe", 404);
         }
-        return $this->successResponse($Follow);
+        return $this->successResponse("Error");
     }
 
     //Todos los creadores a los que sigue un usuario

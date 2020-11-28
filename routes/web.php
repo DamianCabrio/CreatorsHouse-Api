@@ -37,6 +37,10 @@ $router->get(
     "/postsPremium/{idUser}",
     "FollowController@postsPremium"
 );
+$router->get(
+    "/isFollow/{idUser}/{idCreator}",
+    "FollowController@isFollow"
+);
 
 
 
