@@ -42,35 +42,24 @@ class CreatorController extends Controller
     // Solo guardar el banner
     public function upload(Request $request)
     {
-
-        // $files = $request->file;
-        //$request->file->storeAs('uploads', uniqid('img_') . $request->file->getClientOriginalName());
-        // image will be stored at storage/app/public/uploads
-        // return $request;
-        // if (!empty($files)) {
-        //     foreach ($files as $file) {
-        //         Storage::put($file - getClientOriginalName(), file_get_contents($file));
-        //         return ['file' => $file];
-        //     }
-        // }
-
         $file = $request->file('banner');
-        $path = "uploads/profile/banner";
-        $fileName = uniqid() . "_" . 'prueba2.jpg';
+        $idCreator = $request->idCreator;
+        $path = "images/creators/" . $idCreator . "/profile/banner";
+        $fileName = uniqid() . "_" . $file->getClientOriginalName();
         $file->move($path, $fileName);
-        $bannerFullPath = $path . "/" . $fileName;
+        //$bannerFullPath = $path . "/" . $fileName;
+        $creator = Creator::where("id", $idCreator)->first();
+        $creator["banner"] = $path . '/' . $fileName;
+        $creator->save();
 
-        return response()->json([
-            'request' => $request,
-            'message' => 'Se guardo la imagen',
-        ]);
+        return $this->successResponse($creator);
     }
 
-
+    // Alta de creator sin banner
     public function store(Request $request)
     {
         $rules = [
-            'banner' => 'mimes:jpeg,bmp,png,jpg',
+            //'banner' => 'mimes:jpeg,bmp,png,jpg',
             'description' => 'required|max:255',
             'instagram' => 'URL',
             'youtube' => 'URL',
@@ -82,6 +71,7 @@ class CreatorController extends Controller
         $this->validate($request, $rules);
 
         $fields = $request->all();
+        //toma el user logueado
         $fields["idUser"] = $request->user()->id;
 
         //Verifica que exista la category
@@ -92,7 +82,7 @@ class CreatorController extends Controller
             //Alta del nuevo creador
             $creator = Creator::create($fields);
 
-            if ($request->has("banner")) {
+            /*  if ($request->has("banner")) {
                 $file = $request->file('banner');
                 $path = "images/creators/" . $creator->id . "/profile/banner";
                 $fileName = uniqid() . "_" . $file->getClientOriginalName();
@@ -100,8 +90,9 @@ class CreatorController extends Controller
                 $bannerFullPath = $path . "/" . $fileName;
                 $creator["banner"] = $bannerFullPath;
                 $creator->save();
-            }
-
+            } */
+            //$creator["banner"] = '';
+            $creator->save();
             //Falta agregar a tabla categorias x creador
             $creator->categories()->attach($category);
 

@@ -37,10 +37,7 @@ $router->get(
     "/postsPremium/{idUser}",
     "FollowController@postsPremium"
 );
-$router->post(
-    "/upload",
-    "CreatorController@upload"
-);
+
 
 
 //----------------------------------
@@ -56,6 +53,7 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
     $router->post("/unfollow/{idUser}/{idCreator}", "FollowController@delete");
     $router->post("/creators", ["as" => "createCreator", "uses" => "CreatorController@store"]);
     $router->put("/creators/{id}", ["as" => "updateCreator", "uses" => "CreatorController@update"]);
+    $router->post("/upload", "CreatorController@upload");
 });
 //Muestra todos los Posts de un creator
 $router->get("/postscreator/{creator_id}", "CreatorController@showPostsCreator");
