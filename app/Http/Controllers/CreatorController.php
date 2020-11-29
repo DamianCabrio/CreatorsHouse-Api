@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Http\UploadedFile;
 
 class CreatorController extends Controller
 {
@@ -54,35 +55,36 @@ class CreatorController extends Controller
 
         return $this->successResponse($creator); */
 
-        $file = $request->file('banner');
-        $filename = uniqid() . "_" . $file->getClientOriginalName();
-        $idCreator = $request->idCreator;
-        $creator = Creator::where("id", $idCreator)->first();
-        // Valid file extensions
-        $valid_extensions = array("jpg", "jpeg", "png", "pdf");
+        if ($request->file('banner')) {
+            $file = $request->file('banner');
+            $pathOrigen = $file->path();
+            $extension = $file->extension();
+            $filename = uniqid() . "_" . $file->getClientOriginalName();
+            $idCreator = $request->idCreator;
+            $creator = Creator::findOrFail($idCreator);
+            // Valid file extensions
+            $valid_extensions = array("jpg", "jpeg", "png", "pdf");
+            // Check extension
+            if (in_array(strtolower($extension), $valid_extensions)) {
+                $path = "images/creators/" . $idCreator . "/profile/banner/";
+                // Upload file
+                //$file->move($destinationPath, $filename);
+                if ($file->move($path, $filename)) {
 
-        // File extension
-        $extension = pathinfo($filename, PATHINFO_EXTENSION);
 
-        // Check extension
-        if (in_array(strtolower($extension), $valid_extensions)) {
-            $path = "images/creators/" . $idCreator . "/profile/banner/";
-            // Upload file
-            if ($file->move($path, $filename)) {
+                    $creator["banner"] = $path . $filename;
+                    $creator->save();
 
-
-                $creator["banner"] = $path . $filename;
-                $creator->save();
-
-                echo ('Se guardo el banner');
+                    return $this->successResponse('Se guardo el banner', 200);
+                } else {
+                    return $this->errorResponse('Error no se guardo', 401);
+                }
             } else {
-                echo ('Error no se guardo');
+                return $this->errorResponse('Extension invalida', 401);
             }
         } else {
-            echo ('Extension invalida');
+            return $this->errorResponse('No recibio el archivo', 401);
         }
-
-        return $this->successResponse($creator);
     }
 
     // Alta de creator sin banner
