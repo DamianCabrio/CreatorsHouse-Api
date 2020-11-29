@@ -213,6 +213,10 @@ class CreatorController extends Controller
     public function showOneRandCreator()
     {
         $check_creators = User::where("isCreator", 1)->get()->random(1);
+        foreach ($check_creators as $creator) {
+            //agregar el id del creator
+            $creator['idCreator'] = Creator::where("idUser", $creator['id'])->get('id');
+        }
         return $this->successResponse($check_creators);
     }
 
