@@ -37,8 +37,9 @@ class FollowController extends Controller
         return $this->successResponse($Follow);
     }
 
-    public function isFollow($idUser, $idCreator)
+    public function isFollow(Request $request, $idCreator)
     {
+        $idUser = $request->user()->id;
         $Follow = Follow::where("idCreator", $idCreator)->where("idUser", $idUser)->get();
         return $this->successResponse($Follow);
     }

@@ -37,10 +37,7 @@ $router->get(
     "/postsPremium/{idUser}",
     "FollowController@postsPremium"
 );
-$router->get(
-    "/isFollow/{idUser}/{idCreator}",
-    "FollowController@isFollow"
-);
+
 
 
 
@@ -53,8 +50,11 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
     $router->get("/users/me", "UserController@me");
     $router->get("/usercreator/{idUser}", "CreatorController@showOne");
     $router->get("/following/{idUser}", "FollowController@following");
+    // Follow Guardar - Borrar - Consultar
+    $router->get("/isFollow/{idCreator}", "FollowController@isFollow");
     $router->post("/follow/{idUser}/{idCreator}", "FollowController@store");
     $router->post("/unfollow/{idUser}/{idCreator}", "FollowController@delete");
+    // --------------------------------
     $router->post("/creators", ["as" => "createCreator", "uses" => "CreatorController@store"]);
     $router->put("/creators/{id}", ["as" => "updateCreator", "uses" => "CreatorController@update"]);
     $router->post("/upload", "CreatorController@upload");
