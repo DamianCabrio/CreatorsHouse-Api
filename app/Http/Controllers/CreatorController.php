@@ -59,7 +59,7 @@ class CreatorController extends Controller
             $idUser = $r->user()->id;
             $creator = Creator::where('idUser', $idUser)->first();
             // Armo la ruta destino
-            $folder = "images/creators/" . $creator['id'] . "/profile/banner";
+            $folder = "images/creators/" . $creator['id'] . "/profile/banner/";
             $nameFile = uniqid() . "_" . $file->getClientOriginalName();
             // Valid file extensions
             $extension = $file->extension();
