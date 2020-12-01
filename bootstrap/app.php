@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\Cors;
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
@@ -80,6 +82,9 @@ $app->configure('app');
 | route or middleware that'll be assigned to some specific routes.
 |
 */
+$app->middleware([
+    App\Http\Middleware\Cors::class
+]);
 
 $app->middleware([
     Fruitcake\Cors\HandleCors::class,

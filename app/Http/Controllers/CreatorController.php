@@ -40,6 +40,56 @@ class CreatorController extends Controller
         return $this->successResponse($Creator);
     }
 
+    // Upload Basico
+    public function uploadBasico(Request $r)
+    {
+        $file = $r->file('archivo');
+        $folder = "images/";
+        $r->file('archivo')->move($folder, $file->getClientOriginalName());
+        return response()->json([
+            "message" => "Correcto",
+        ]);
+    }
+    // Upload Banner
+    public function uploadBanner(Request $r)
+    {
+        if ($r->file('archivo')) {
+            $file = $r->file('archivo');
+            // Busco el id del creador
+            $idUser = $r->user()->id;
+            $creator = Creator::where('idUser', $idUser)->first();
+            // Armo la ruta destino
+            $folder = "images/creators/" . $creator['id'] . "/profile/banner";
+            $nameFile = uniqid() . "_" . $file->getClientOriginalName();
+            // Valid file extensions
+            $extension = $file->extension();
+            $valid_extensions = array("jpg", "jpeg", "png", "pdf");
+            // Check extension
+            if (in_array(strtolower($extension), $valid_extensions)) {
+            } else {
+                return response()->json([
+                    "message" => "Extensión invalida",
+                ]);
+            }
+            //Copio el archivo
+            if ($r->file('archivo')->move($folder, $nameFile)) {
+                $creator["banner"] = $folder . $nameFile;
+                $creator->save();
+                return response()->json([
+                    "message" => "Se guardo el banner",
+                ]);
+            } else {
+                return response()->json([
+                    "message" => "Error no se guardo",
+                ]);
+            }
+        } else {
+            return response()->json([
+                "message" => "No recibio el archivo",
+            ]);
+        }
+    }
+
     // Solo guardar el banner
     public function upload(Request $request)
     {

@@ -37,7 +37,7 @@ $router->get(
     "/postsPremium/{idUser}",
     "FollowController@postsPremium"
 );
-
+$router->post("/upload", "CreatorController@uploadBasico");
 
 
 
@@ -57,7 +57,9 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
     // --------------------------------
     $router->post("/creators", ["as" => "createCreator", "uses" => "CreatorController@store"]);
     $router->put("/creators/{id}", ["as" => "updateCreator", "uses" => "CreatorController@update"]);
+    // Subir imagenes banner y avatar
     $router->post("/upload", "CreatorController@upload");
+    $router->post("/uploadBanner", "CreatorController@uploadBanner");
 });
 //Muestra todos los Posts de un creator
 $router->get("/postscreator/{creator_id}", "CreatorController@showPostsCreator");
