@@ -11,14 +11,14 @@ class MercadoPagoAccessToken extends Model
     protected $table = "mercado_pago_tokens";
 
     protected $fillable = [
-        "idCreador",
+        "id_creator",
         "access_token",
         "expires_in"
     ];
 
     public static function alreadyExists($idCreador)
     {
-        return MercadoPagoAccessToken::where('idCreador', '=', $idCreador)->first();
+        return MercadoPagoAccessToken::where('id_creator', '=', $idCreador)->first();
     }
 
     public function creator(): BelongsTo

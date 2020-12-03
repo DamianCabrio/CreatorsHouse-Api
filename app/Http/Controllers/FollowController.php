@@ -40,7 +40,7 @@ class FollowController extends Controller
     public function isFollow(Request $request, $idCreator)
     {
         $idUser = $request->user()->id;
-        $Follow = Follow::where("idCreator", $idCreator)->where("idUser", $idUser)->get();
+        $Follow = Follow::where("idCreator", $idCreator)->where("idUser", $idUser)->firstOfFail();
         return $this->successResponse($Follow);
     }
 

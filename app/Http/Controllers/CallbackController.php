@@ -23,13 +23,12 @@ class CallbackController extends Controller
         $this->mercadoPagoService = $mercadoPagoService;
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $code)
     {
-        if ($request->has("code")) {
-
+        if (isset($code)) {
             $myBody["client_secret"] = config("services.mercado_pago.access_token");
             $myBody["grant_type"] = "authorization_code";
-            $myBody["code"] = $request->code;
+            $myBody["code"] = $code;
             $myBody["redirect_uri"] = config("services.mercado_pago.redirect_uri");
 
             $loggedInCreator = Creator::where('idUser', '=', $request->user()->id)->firstOrFail();
@@ -42,7 +41,7 @@ class CallbackController extends Controller
 
             $response = json_decode($this->mercadoPagoService->obtainMercadoPagoToken($myBody));
 
-            $fields["idCreador"] = $loggedInCreator->id;
+            $fields["id_creator"] = $loggedInCreator->id;
             $fields["expires_in"] = $response->expires_in;
             $fields["access_token"] = $response->access_token;
 
@@ -59,7 +58,27 @@ class CallbackController extends Controller
         }
     }
 
-    public function createPayment(Request $request){
-        MercadoPago\SDK::setAccessToken();
+    public function createPayment(Request $request, $idCreador){
+        $creador = Creator::findOrFail($idCreador);
+        $mercadoPagoToken = MercadoPagoAccessToken::where("id_creator", "=", $creador->id)->firstOrFail();
+        $access_token = $mercadoPagoToken->access_token;
+        // Agrega credenciales
+        MercadoPago\SDK::setAccessToken($access_token);
+        // Crea un objeto de preferencia
+        $preference = new MercadoPago\Preference();
+        // Crea un ítem en la preferencia
+        $item = new MercadoPago\Item();
+        $item->title = "Enormous Cotton Pants";
+        $item->quantity = 4;
+        $item->currency_id = "ARS";
+        $item->unit_price = 91.96;
+
+        $payer = new MercadoPago\Payer();
+        $payer->email = $request->user()->email;
+
+        $preference->items = array($item);
+        $preference->payer = $payer;
+        $preference->save();
+        return $preference->init_point;
     }
 }

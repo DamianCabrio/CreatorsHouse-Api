@@ -60,6 +60,8 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
     // Subir imagenes banner y avatar
     $router->post("/upload", "CreatorController@upload");
     $router->post("/uploadBanner", "CreatorController@uploadBanner");
+    $router->get("/creators/{idCreador}/pay", ["as" => "payCreator", "uses" => "CallbackController@createPayment"]);
+    $router->post("/posts/like/{idPost}")
 });
 //Muestra todos los Posts de un creator
 $router->get("/postscreator/{creator_id}", "CreatorController@showPostsCreator");
