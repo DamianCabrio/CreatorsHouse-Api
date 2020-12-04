@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Creator;
 use App\Models\Follow;
+use App\Models\Like;
 use App\Models\User;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
@@ -271,19 +272,30 @@ class CreatorController extends Controller
     }
 
     //Mostrar todos los post del creador (con sus images y videos)
-    public function showPostsCreator($creator_id)
+    public function showPostsCreator(Request $request, $creator_id)
     {
         $creator = Creator::findOrFail($creator_id);
 
         $postsCreator = $creator->posts;
+        
+        $idUser = $request->user()->id;
+
         //recorrer el json, si es tipo 1 text- tipo 2 images- tipo 3 videos
         foreach ($postsCreator as $unPost) {
+            $like = Like::where([["idPost", "=" , $unPost->id],["idUser", "=" , $idUser]])->first();
+            $alreadyLiked = false;
+
+            if(!is_null($like)){
+                $alreadyLiked = true;
+            }
+
             //carga imagenes del post $unPost.cantidadLikes = $cantidadLikes;
             $unPost['images'] = $unPost->images;
             //carga videos del post
             $unPost['videos'] = $unPost->videos;
             //carga cantidad de likes del post? o likes del post?
             $unPost['cantLikes'] = $unPost->likes->count();
+            $unPost["alreadyLiked"] = $alreadyLiked;
             //$unPost['Likes'] = $unPost->l ikes;
         }
         return json_encode($postsCreator);

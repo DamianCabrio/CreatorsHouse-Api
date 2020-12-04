@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Creator;
 use App\Models\Image;
+use App\Models\Like;
 use App\Models\Post;
 use App\Models\Video;
 use App\Traits\ApiResponser;
@@ -81,6 +82,59 @@ class PostController extends Controller
         } else {
             return $this->errorResponse("No podes hacer eso, capo", 404);
         }
+    }
+
+    public function likePost(Request $request, $idPost, $idUser){
+
+        if (!is_null($idPost) && !is_null($idUser)) {
+            if ($idUser == $request->user()->id) {
+                $fields["idPost"] = $idPost;
+                $fields["idUser"] = $idUser;
+
+                $alreadyLiked = Like::where([["idUser", "=", $idUser], ["idPost", "=", $idPost]])->withTrashed()->first();
+                if (is_null($alreadyLiked)) {
+                    $like = Like::create($fields);
+                    $like->save();
+                    return $this->successResponse("Dio like con exito", 400);
+                } elseif ($alreadyLiked->deleted_at != null) {
+                    $alreadyLiked->restore();
+                    return $this->successResponse("Dio like con exito", 400);
+                } else {
+                    return $this->errorResponse("El like ya fue creado", 403);
+                }
+            } else {
+                return $this->errorResponse("Usted no puede realizar esta acción", 403);
+            }
+        } else {
+            return $this->errorResponse("El usuario o creador no existe", 404);
+        }
+    }
+
+    public function removeLikePost(Request $request, $idPost, $idUser){
+
+        if (!is_null($idPost) && !is_null($idUser)) {
+            if ($idUser == $request->user()->id) {
+                $alreadyLiked = Like::where([["idUser", "=", $idUser], ["idPost", "=", $idPost]])->first();
+                if (!is_null($alreadyLiked) && $alreadyLiked->deleted_at == null) {
+                    $alreadyLiked->delete();
+                    return $this->successResponse("Retiro su like", 400);
+                } else {
+                    return $this->errorResponse("Usted no le dio like a este post", 403);
+                }
+            } else {
+                return $this->errorResponse("Usted no puede realizar esta acción", 403);
+            }
+        } else {
+            return $this->errorResponse("El usuario o post no existe", 404);
+        }
+        return $this->successResponse("Error");
+    }
+
+    public function isLike(Request $request, $idPost)
+    {
+        $idUser = $request->user()->id;
+        $Follow = Like::where([["idPost", "=" , $idPost],["idUser", "=" , $idUser]])->firstOrFail();
+        return $this->successResponse($Follow);
     }
 
     public function update(Request $request, $id)

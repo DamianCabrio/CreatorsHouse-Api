@@ -61,7 +61,8 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
     $router->post("/upload", "CreatorController@upload");
     $router->post("/uploadBanner", "CreatorController@uploadBanner");
     $router->get("/creators/{idCreador}/pay", ["as" => "payCreator", "uses" => "CallbackController@createPayment"]);
-    $router->post("/posts/like/{idPost}")
+    $router->post("/posts/like/{idPost}/{idUser}", ["as" => "likePost", "uses" => "PostController@likePost"]);
+    $router->post("/posts/unlike/{idPost}/{idUser}", ["as" => "likePost", "uses" => "PostController@removeLikePost"]);
 });
 //Muestra todos los Posts de un creator
 $router->get("/postscreator/{creator_id}", "CreatorController@showPostsCreator");

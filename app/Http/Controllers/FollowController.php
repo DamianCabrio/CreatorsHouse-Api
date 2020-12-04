@@ -40,7 +40,7 @@ class FollowController extends Controller
     public function isFollow(Request $request, $idCreator)
     {
         $idUser = $request->user()->id;
-        $Follow = Follow::where("idCreator", $idCreator)->where("idUser", $idUser)->firstOfFail();
+        $Follow = Follow::where([["idCreator", "=" , $idCreator],["idUser", "=" , $idUser]])->firstOrFail();
         return $this->successResponse($Follow);
     }
 
@@ -60,10 +60,10 @@ class FollowController extends Controller
                 if (is_null($alreadyFollow)) {
                     $follow = Follow::create($fields);
                     $follow->save();
-                    return $this->successResponse("Siguio al creador con exito", 400);
+                    return $this->successResponse("Siguio al creador con exito", 200);
                 } elseif ($alreadyFollow->deleted_at != null) {
                     $alreadyFollow->restore();
-                    return $this->successResponse("Siguio al creador con exito", 400);
+                    return $this->successResponse("Siguio al creador con exito", 200);
                 } else {
                     return $this->errorResponse("Usted ya sige a este creador", 403);
                 }
@@ -90,9 +90,9 @@ class FollowController extends Controller
                 $alreadyFollow = Follow::where([["idCreator", "=", $idCreator], ["idUser", "=", $idUser]])->first();
                 if (!is_null($alreadyFollow) && $alreadyFollow->deleted_at == null) {
                     $alreadyFollow->delete();
-                    return $this->successResponse("Ya no sigue mas a este creador", 400);
+                    return $this->successResponse("Ya no sigue mas a este creador", 200);
                 } else {
-                    return $this->errorResponse("Usted no sigue a este creador", 403);
+                    return $this->errorResponse("Usted no sigue a este creador", 200);
                 }
             } else {
                 return $this->errorResponse("Usted no puede realizar esta acción", 403);

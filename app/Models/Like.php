@@ -10,6 +10,10 @@ class Like extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $fillable = [
+        'idPost', 'idUser'
+    ];
+
     protected $table = "like";
 
     public function post()

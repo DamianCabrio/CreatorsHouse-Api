@@ -14,6 +14,7 @@ class CreateLikeTable extends Migration
     public function up()
     {
         Schema::create('like', function (Blueprint $table) {
+            $table->id();
             $table->foreignId("idPost");
             $table->foreignId("idUser");
             $table->softDeletes();
