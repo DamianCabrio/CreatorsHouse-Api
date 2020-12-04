@@ -277,16 +277,21 @@ class CreatorController extends Controller
         $creator = Creator::findOrFail($creator_id);
 
         $postsCreator = $creator->posts;
-        
-        $idUser = $request->user()->id;
+
+        $idUser = false;
+        if(!is_null($request->user())){
+            $idUser = $request->user()->id;
+        }
 
         //recorrer el json, si es tipo 1 text- tipo 2 images- tipo 3 videos
         foreach ($postsCreator as $unPost) {
-            $like = Like::where([["idPost", "=" , $unPost->id],["idUser", "=" , $idUser]])->first();
             $alreadyLiked = false;
 
-            if(!is_null($like)){
-                $alreadyLiked = true;
+            if($idUser != false){
+                $like = Like::where([["idPost", "=" , $unPost->id],["idUser", "=" , $idUser]])->first();
+                if(!is_null($like)){
+                    $alreadyLiked = true;
+                }
             }
 
             //carga imagenes del post $unPost.cantidadLikes = $cantidadLikes;
