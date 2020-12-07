@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use SoapClient;
 use App\Traits\ApiResponser;
+use SOAPFault;
 
 class SoapController extends Controller
 {
@@ -28,5 +29,21 @@ class SoapController extends Controller
         $city = $result->ResolveIPResult->City;
 
         return json_encode($city);
+    }
+
+    public function getFrase()
+    {
+
+        $client = new SoapClient(null, array(
+            'location' => "http://stange.ar/webservice/server.php",
+            'uri'      => "http://stange.ar/webservice/server.php",
+            'trace'    => 1
+        ));
+        try {
+            $frase = $client->__soapCall("saludar", [""]);
+            return json_encode($frase);
+        } catch (SOAPFault $e) {
+            return json_encode($e->getMessage() . PHP_EOL);
+        }
     }
 }
