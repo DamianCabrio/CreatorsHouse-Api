@@ -38,7 +38,8 @@ $router->get(
     "FollowController@postsPremium"
 );
 $router->post("/upload", "CreatorController@uploadBasico");
-
+//SOAP
+$router->get("/getCity/{ip}", "SoapController@getCity");
 
 
 //----------------------------------
