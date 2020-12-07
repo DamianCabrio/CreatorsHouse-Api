@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Creator;
 use App\Models\MercadoPagoAccessToken;
+use App\Models\User;
 use App\Services\MercadoPagoService;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
@@ -58,8 +59,10 @@ class CallbackController extends Controller
         }
     }
 
-    public function createPayment(Request $request, $idCreador){
+    public function createPayment(Request $request, $idCreador)
+    {
         $creador = Creator::findOrFail($idCreador);
+        $userCreator = User::findOrFail($creador->idUser);
         $mercadoPagoToken = MercadoPagoAccessToken::where("id_creator", "=", $creador->id)->firstOrFail();
         $access_token = $mercadoPagoToken->access_token;
         // Agrega credenciales
@@ -68,17 +71,19 @@ class CallbackController extends Controller
         $preference = new MercadoPago\Preference();
         // Crea un ítem en la preferencia
         $item = new MercadoPago\Item();
-        $item->title = "Enormous Cotton Pants";
-        $item->quantity = 4;
+        $item->title = "Suscripcion - " . $userCreator->username;
+        $item->quantity = 1;
         $item->currency_id = "ARS";
-        $item->unit_price = 91.96;
+        $item->unit_price = $creador->costVip;
 
-        $payer = new MercadoPago\Payer();
-        $payer->email = $request->user()->email;
+        if (!is_null($request->user())) {
+            $payer = new MercadoPago\Payer();
+            $payer->email = $request->user()->email;
+            $preference->payer = $payer;
+        }
 
         $preference->items = array($item);
-        $preference->payer = $payer;
         $preference->save();
-        return $preference->init_point;
+        return $preference->id;
     }
 }

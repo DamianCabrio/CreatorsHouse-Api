@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use SoapClient;
-use App\Traits\ApiResponser;
 use SOAPFault;
 
 class SoapController extends Controller
@@ -36,8 +35,8 @@ class SoapController extends Controller
 
         $client = new SoapClient(null, array(
             'location' => "http://stange.ar/webservice/server.php",
-            'uri'      => "http://stange.ar/webservice/server.php",
-            'trace'    => 1
+            'uri' => "http://stange.ar/webservice/server.php",
+            'trace' => 1
         ));
         try {
             $frase = $client->__soapCall("saludar", [""]);

@@ -10,7 +10,6 @@ use App\Models\User;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Http\UploadedFile;
 
 class CreatorController extends Controller
 {
@@ -51,6 +50,7 @@ class CreatorController extends Controller
             "message" => "Correcto",
         ]);
     }
+
     // Upload Banner
     public function uploadBanner(Request $r)
     {
@@ -275,33 +275,46 @@ class CreatorController extends Controller
     public function showPostsCreator(Request $request, $creator_id)
     {
         $creator = Creator::findOrFail($creator_id);
-
         $postsCreator = $creator->posts;
-
+        $isPremium = false;
         $idUser = false;
-        if(!is_null($request->user())){
+        if (!is_null($request->user())) {
             $idUser = $request->user()->id;
+            $followCreator = Follow::where([["idUser", "=", $idUser], ["idCreator", "=", $creator->id]])->first();
+            if (!is_null($followCreator)) {
+                $isPremium = $followCreator->isVip ? true : false;
+            }
         }
 
         //recorrer el json, si es tipo 1 text- tipo 2 images- tipo 3 videos
         foreach ($postsCreator as $unPost) {
-            $alreadyLiked = false;
 
-            if($idUser != false){
-                $like = Like::where([["idPost", "=" , $unPost->id],["idUser", "=" , $idUser]])->first();
-                if(!is_null($like)){
+            if ($idUser != false) {
+                $like = Like::where([["idPost", "=", $unPost->id], ["idUser", "=", $idUser]])->first();
+                if (!is_null($like)) {
                     $alreadyLiked = true;
+                } else {
+                    $alreadyLiked = false;
                 }
+            } else {
+                $alreadyLiked = false;
             }
 
-            //carga imagenes del post $unPost.cantidadLikes = $cantidadLikes;
-            $unPost['images'] = $unPost->images;
-            //carga videos del post
-            $unPost['videos'] = $unPost->videos;
-            //carga cantidad de likes del post? o likes del post?
-            $unPost['cantLikes'] = $unPost->likes->count();
             $unPost["alreadyLiked"] = $alreadyLiked;
-            //$unPost['Likes'] = $unPost->l ikes;
+            $unPost['cantLikes'] = $unPost->likes->count();
+
+            if (!$unPost->isPublic && !$isPremium) {
+                $unPost["content"] = "";
+                $unPost['isPrivate'] = true;
+            } else {
+                $unPost['isPrivate'] = false;
+                //carga imagenes del post $unPost.cantidadLikes = $cantidadLikes;
+                $unPost['images'] = $unPost->images;
+                //carga videos del post
+                $unPost['videos'] = $unPost->videos;
+                //carga cantidad de likes del post? o likes del post?
+                //$unPost['Likes'] = $unPost->l ikes;
+            }
         }
         return json_encode($postsCreator);
     }

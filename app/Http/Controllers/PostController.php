@@ -84,7 +84,8 @@ class PostController extends Controller
         }
     }
 
-    public function likePost(Request $request, $idPost, $idUser){
+    public function likePost(Request $request, $idPost, $idUser)
+    {
 
         if (!is_null($idPost) && !is_null($idUser)) {
             if ($idUser == $request->user()->id) {
@@ -110,7 +111,8 @@ class PostController extends Controller
         }
     }
 
-    public function removeLikePost(Request $request, $idPost, $idUser){
+    public function removeLikePost(Request $request, $idPost, $idUser)
+    {
 
         if (!is_null($idPost) && !is_null($idUser)) {
             if ($idUser == $request->user()->id) {

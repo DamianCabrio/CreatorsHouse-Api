@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Creator;
 use App\Models\Follow;
+use App\Models\Post;
 use App\Models\User;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
-use App\Models\Post;
-use App\Models\Creator;
-use Illuminate\Support\Facades\Http;
 
 
 class FollowController extends Controller
@@ -40,7 +39,7 @@ class FollowController extends Controller
     public function isFollow(Request $request, $idCreator)
     {
         $idUser = $request->user()->id;
-        $Follow = Follow::where([["idCreator", "=" , $idCreator],["idUser", "=" , $idUser]])->firstOrFail();
+        $Follow = Follow::where([["idCreator", "=", $idCreator], ["idUser", "=", $idUser]])->firstOrFail();
         return $this->successResponse($Follow);
     }
 
