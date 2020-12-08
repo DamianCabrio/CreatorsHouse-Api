@@ -76,14 +76,12 @@ class CallbackController extends Controller
         $item->currency_id = "ARS";
         $item->unit_price = $creador->costVip;
 
-        if (!is_null($request->user())) {
-            $payer = new MercadoPago\Payer();
-            $payer->email = $request->user()->email;
-            $preference->payer = $payer;
-        }
+        $payer = new MercadoPago\Payer();
 
         $preference->items = array($item);
+        $preference->payer = $payer;
+        $preference->notification_url = "http://apich.stange.ar/public_html/notification_ipn";
         $preference->save();
-        return $preference->id;
+        return $this->successResponse($preference->id);
     }
 }

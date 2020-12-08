@@ -72,8 +72,8 @@ class PostController extends Controller
             $post['videos'] = $post->videos;
             $post["comments"] = $post->comments;
 
-            foreach ($post["comments"] as $i => $comment){
-                $user = User::where("id",$comment->idUser)->firstOrFail();
+            foreach ($post["comments"] as $i => $comment) {
+                $user = User::where("id", $comment->idUser)->firstOrFail();
                 $comment["user"] = $user;
             }
 

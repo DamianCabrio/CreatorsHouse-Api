@@ -47,6 +47,7 @@ $router->get("/creators/{idCreator}/post/{idPost}", "PostController@show");
 $router->get("/usercreator/{idUser}", "CreatorController@showOne");
 //Logged in user routes
 $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use ($router) {
+    $router->post("/user/{idUser}/post/{idPost}/comment", "CommentController@store");
     $router->get("/mercado-pago/callback/{code}", "CallbackController@store");
     $router->post("/creators/{creatorId}/posts", ["as" => "createPost", "uses" => "PostController@store"]);
     $router->get("/users/me", "UserController@me");
