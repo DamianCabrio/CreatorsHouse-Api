@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Creator;
+use App\Models\Follow;
 use App\Models\Image;
 use App\Models\Like;
 use App\Models\Post;
+use App\Models\User;
 use App\Models\Video;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
@@ -25,16 +27,61 @@ class PostController extends Controller
         //
     }
 
-    public function index()
+    public function index(Request $request, $creator_id)
     {
         $Posts = Post::all();
         return $this->successResponse($Posts);
     }
 
-    public function show($id)
+    public function show(Request $request, $idCreator, $idPost)
     {
-        $Post = Post::findOrFail($id);
-        return $this->successResponse($Post);
+        $post = Post::findOrFail($idPost);
+        $creator = Creator::findOrFail($post->idCreator);
+
+        $isPremium = false;
+        $idUser = false;
+        if (!is_null($request->user())) {
+            $idUser = $request->user()->id;
+            $followCreator = Follow::where([["idUser", "=", $idUser], ["idCreator", "=", $creator->id]])->first();
+            if (!is_null($followCreator)) {
+                $isPremium = $followCreator->isVip ? true : false;
+            }
+        }
+        if ($idUser != false) {
+            $like = Like::where([["idPost", "=", $post->id], ["idUser", "=", $idUser]])->first();
+            if (!is_null($like)) {
+                $alreadyLiked = true;
+            } else {
+                $alreadyLiked = false;
+            }
+        } else {
+            $alreadyLiked = false;
+        }
+
+        $post["alreadyLiked"] = $alreadyLiked;
+        $post['cantLikes'] = $post->likes->count();
+
+        if (!$post->isPublic && !$isPremium) {
+            $post["content"] = "";
+            $post['isPrivate'] = true;
+        } else {
+            $post['isPrivate'] = false;
+            //carga imagenes del post $unPost.cantidadLikes = $cantidadLikes;
+            $post['images'] = $post->images;
+            //carga videos del post
+            $post['videos'] = $post->videos;
+            $post["comments"] = $post->comments;
+
+            foreach ($post["comments"] as $i => $comment){
+                $user = User::where("id",$comment->idUser)->firstOrFail();
+                $comment["user"] = $user;
+            }
+
+            //carga cantidad de likes del post? o likes del post?
+            //$unPost['Likes'] = $unPost->l ikes;
+        }
+
+        return json_encode($post);
     }
 
     public function store(Request $request, $creatorId)

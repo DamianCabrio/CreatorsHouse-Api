@@ -230,7 +230,7 @@ class CreatorController extends Controller
 
     public function showOne($idUser)
     {
-        $Creator = Creator::where("idUser", "=", $idUser)->get();
+        $Creator = Creator::where("idUser", "=", $idUser)->firstOrFail();
         return $this->successResponse($Creator);
     }
 

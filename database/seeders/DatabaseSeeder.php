@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Creator;
 use App\Models\Follow;
 use App\Models\Image;
@@ -63,6 +64,11 @@ class DatabaseSeeder extends Seeder
         Video::flushEventListeners();
         $videosQuantity = 30;
         Video::factory($videosQuantity)->create();
+
+        Comment::truncate();
+        Comment::flushEventListeners();
+        $commentQuantity = 250;
+        Comment::factory($commentQuantity)->create();
 
 //        Category_Creator::truncate();
 //        Category_Creator::flushEventListeners();

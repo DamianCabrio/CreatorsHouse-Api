@@ -41,6 +41,7 @@ $router->post("/upload", "CreatorController@uploadBasico");
 //SOAP
 $router->get("/getCity/{ip}", "SoapController@getCity");
 $router->get("/getFrase", "SoapController@getFrase");
+$router->get("/creators/{idCreator}/post/{idPost}", "PostController@show");
 
 //----------------------------------
 $router->get("/usercreator/{idUser}", "CreatorController@showOne");
