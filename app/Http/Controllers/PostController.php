@@ -103,7 +103,7 @@ class PostController extends Controller
             $this->validate($request, $rules);
             $fields = $request->except(["video", "imagenes"]);
             $fields["idCreator"] = (int)$creatorId;
-            $fields["isPublic"] = (bool)$fields["isPublic"];
+            $fields["isPublic"] = $fields["isPublic"] == "0" ? false : true;
             $post = Post::create($fields);
 
             if ($fields["tipo"] == 2 && $request->hasfile("imagenes")) {
