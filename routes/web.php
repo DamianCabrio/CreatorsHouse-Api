@@ -60,9 +60,10 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
     // --------------------------------
     $router->post("/creators", ["as" => "createCreator", "uses" => "CreatorController@store"]);
     $router->put("/creators/{id}", ["as" => "updateCreator", "uses" => "CreatorController@update"]);
-    // Subir imagenes banner y avatar
+    // Subir imagenes banner y avatar 
     $router->post("/upload", "CreatorController@upload");
     $router->post("/uploadBanner", "CreatorController@uploadBanner");
+    $router->post("/uploadAvatar", "UserController@uploadAvatar");
     $router->get("/creators/{idCreador}/pay", ["as" => "payCreator", "uses" => "CallbackController@createPayment"]);
     $router->post("/posts/like/{idPost}/{idUser}", ["as" => "likePost", "uses" => "PostController@likePost"]);
     $router->post("/posts/unlike/{idPost}/{idUser}", ["as" => "likePost", "uses" => "PostController@removeLikePost"]);

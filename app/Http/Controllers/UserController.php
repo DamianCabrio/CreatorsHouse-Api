@@ -157,4 +157,45 @@ class UserController extends Controller
 
         return $this->successResponse("Se verifico el email correctamente", 400);
     }
+
+    // Upload Avatar
+    public function uploadAvatar(Request $r)
+    {
+        if ($r->file('archivo')) {
+            $file = $r->file('archivo');
+            // Busco el id del creador
+            $idUser = $r->user()->id;
+            $user = User::findOrFail($idUser);
+            //$creator = Creator::where('idUser', $idUser)->first();
+            // Armo la ruta destino
+            $folder = "images/users/" . $idUser . "/avatar/";
+            $nameFile = uniqid() . "_" . $file->getClientOriginalName();
+            // Valid file extensions
+            $extension = $file->extension();
+            $valid_extensions = array("jpg", "jpeg", "png", "pdf");
+            // Check extension
+            if (in_array(strtolower($extension), $valid_extensions)) {
+            } else {
+                return response()->json([
+                    "message" => "Extensión invalida",
+                ]);
+            }
+            //Copio el archivo
+            if ($r->file('archivo')->move($folder, $nameFile)) {
+                $user["avatar"] = $folder . $nameFile;
+                $user->save();
+                return response()->json([
+                    "message" => "Se guardo el avatar",
+                ]);
+            } else {
+                return response()->json([
+                    "message" => "Error no se guardo",
+                ]);
+            }
+        } else {
+            return response()->json([
+                "message" => "No recibio el archivo",
+            ]);
+        }
+    }
 }
