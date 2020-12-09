@@ -14,7 +14,7 @@ class AddDateVipToFollow extends Migration
     public function up()
     {
         Schema::table('follow', function (Blueprint $table) {
-            $table->integer("dateVip");
+            $table->integer("dateVip")->nullable();
         });
     }
 
