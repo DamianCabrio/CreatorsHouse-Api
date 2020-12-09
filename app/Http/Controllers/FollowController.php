@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Creator;
 use App\Models\Follow;
+use App\Models\Like;
 use App\Models\Post;
 use App\Models\User;
 use App\Traits\ApiResponser;
@@ -146,6 +147,15 @@ class FollowController extends Controller
 
             foreach ($posts as $unPost) {
 
+                    $like = Like::where([["idPost", "=", $unPost->id], ["idUser", "=", $idUser]])->first();
+                    if (!is_null($like)) {
+                        $alreadyLiked = true;
+                    } else {
+                        $alreadyLiked = false;
+                    }
+
+                $unPost["alreadyLiked"] = $alreadyLiked;
+
                 $creator = Creator::findOrFail($unPost['idCreator']);
 
                 $unPost['user'] = User::where('id', $creator['idUser'])->get();
@@ -174,6 +184,15 @@ class FollowController extends Controller
             $follow['posts'] = $posts;
 
             foreach ($posts as $unPost) {
+
+                $like = Like::where([["idPost", "=", $unPost->id], ["idUser", "=", $idUser]])->first();
+                if (!is_null($like)) {
+                    $alreadyLiked = true;
+                } else {
+                    $alreadyLiked = false;
+                }
+
+                $unPost["alreadyLiked"] = $alreadyLiked;
 
                 $creator = Creator::findOrFail($unPost['idCreator']);
 

@@ -37,6 +37,9 @@ $router->get(
     "/postsPremium/{idUser}",
     "FollowController@postsPremium"
 );
+
+$router->post("/notification_ipn", "CallbackController@notification");
+
 $router->post("/upload", "CreatorController@uploadBasico");
 //SOAP
 $router->get("/getCity/{ip}", "SoapController@getCity");

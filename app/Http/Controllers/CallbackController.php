@@ -81,7 +81,11 @@ class CallbackController extends Controller
         $preference->items = array($item);
         $preference->payer = $payer;
         $preference->notification_url = "http://apich.stange.ar/public_html/notification_ipn";
+        $preference->back_urls = array(
+            "success" => "http://localhost:8080/#/creator/" . $idCreador,
+        );
+        $preference->auto_return = "approved";
         $preference->save();
-        return $this->successResponse($preference->id);
+        return $this->successResponse($preference->init_point);
     }
 }
