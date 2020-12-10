@@ -21,7 +21,7 @@ $router->post('/password/reset', ['as' => 'password.reset', 'uses' => 'ResetPass
 
 $router->get('/users/verify/{token}', ["as" => "verify", "uses" => "UserController@verify"]);
 
-$router->post("/creators/posts/{creatorId}", ["as" => "createPost", "uses" => "PostController@store"]);
+
 
 //Prueba ---------------------
 //$router->get("/follow/{user}/posts", "FollowController@postFollow");
@@ -67,6 +67,8 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
     $router->post("/upload", "CreatorController@upload");
     $router->post("/uploadBanner", "CreatorController@uploadBanner");
     $router->post("/uploadAvatar", "UserController@uploadAvatar");
+    //Subor Post
+    $router->post("/creators/posts/{creatorId}", ["as" => "createPost", "uses" => "PostController@store"]);
     $router->get("/creators/{idCreador}/pay", ["as" => "payCreator", "uses" => "CallbackController@createPayment"]);
     $router->post("/posts/like/{idPost}/{idUser}", ["as" => "likePost", "uses" => "PostController@likePost"]);
     $router->post("/posts/unlike/{idPost}/{idUser}", ["as" => "likePost", "uses" => "PostController@removeLikePost"]);

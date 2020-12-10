@@ -86,48 +86,68 @@ class PostController extends Controller
 
     public function store(Request $request, $creatorId)
     {
+        //$file = $request->file('imagenes');
+        $data =  json_decode($request->data);
+        //return $this->successResponse($data, 201);;
         $rules = [
             'content' => 'required|max:1000',
             'tipo' => 'required|min:1|max:3',
             'title' => 'required|max:255',
             'isPublic' => 'required|boolean',
             "video" => "url|required_if:tipo,==,3",
-            "imagenes" => "required_if:tipo,==,2",
-            "imagenes.*" => "image|mimes:jpeg,png,jpg,gif,svg|max:2048"
+            //"imagenes" => "required_if:tipo,==,2",
+            //"imagenes.*" => "image|mimes:jpeg,png,jpg,gif,svg|max:2048"
         ];
 
         $creatorLogeado = Creator::where('idUser', '=', $request->user()->id)->firstOrFail();
 
         if ($creatorId == $creatorLogeado->id) {
             //validación de datos
-            $this->validate($request, $rules);
-            $fields = $request->except(["video", "imagenes"]);
+            //$this->validate($data, $rules);
+            $fields["content"] = $data->content;
+            $fields["tipo"] = $data->tipo;
+            $fields["title"] = $data->title;
+            $fields["isPublic"] = $data->isPublic;
             $fields["idCreator"] = (int)$creatorId;
             $fields["isPublic"] = $fields["isPublic"] == "0" ? false : true;
-            $post = Post::create($fields);
-
-            if ($fields["tipo"] == 2 && $request->hasfile("imagenes")) {
-                $path = "images/creators/" . $creatorLogeado->id . "/posts/" . $post->id;
-
-                foreach ($request->file('imagenes') as $file) {
-                    $fileName = uniqid() . "_" . $file->getClientOriginalName();
-                    $file->move($path, $fileName);
-
-                    Image::create([
-                        "image" => $path . "/" . $fileName,
-                        "idPost" => $post->id
-                    ]);
-                }
+            //Tipo text
+            if ($fields["tipo"] == 1) {
+                $post = Post::create($fields);
+                return $this->successResponse($post, 201);
             }
+            //Tipo Imagenes
+            if ($fields["tipo"] == 2 && $request->file('imagenes')) {
+                $post = Post::create($fields);
+                $path = "images/creators/" . $creatorLogeado->id . "/posts/" . $post->id;
+                $file = $request->file('imagenes');
+                //foreach ($request->file('imagenes') as $file) {
+                $fileName = uniqid() . "_" . $file->getClientOriginalName();
+                $file->move($path, $fileName);
+
+                Image::create([
+                    "image" => $path . "/" . $fileName,
+                    "idPost" => $post->id
+                ]);
+                //}
+                return $this->successResponse($post, 201);
+            } elseif ($request->file('imagenes')) {
+                //echo ('No guardo las imagenes');
+                return $this->errorResponse("No guardo Imagen", 404);
+            }
+            //Tipo Video
             if ($fields["tipo"] == 3) {
+                $post = Post::create($fields);
                 Video::create([
                     'idPost' => $post->id,
-                    'video' => $request->video
+                    'video' => $data->video
                 ]);
+                return $this->successResponse($post, 201);
+            } else {
+                //echo ('No guardo el video');
+                return $this->errorResponse("No guardo Video", 404);
             }
-            return $this->successResponse($post, 201);
         } else {
-            return $this->errorResponse("No podes hacer eso, capo", 404);
+            return $this->errorResponse("ID Creador no validado", 404);
         }
     }
 
