@@ -63,15 +63,18 @@ $router->group(['prefix' => 'api', "middleware" => "auth:api"], function () use 
     // --------------------------------
     $router->post("/creators", ["as" => "createCreator", "uses" => "CreatorController@store"]);
     $router->put("/creators/{id}", ["as" => "updateCreator", "uses" => "CreatorController@update"]);
-    // Subir imagenes banner y avatar 
+    // Subir imagenes banner y avatar
     $router->post("/upload", "CreatorController@upload");
     $router->post("/uploadBanner", "CreatorController@uploadBanner");
     $router->post("/uploadAvatar", "UserController@uploadAvatar");
     //Subor Post
     $router->post("/creators/posts/{creatorId}", ["as" => "createPost", "uses" => "PostController@store"]);
-    $router->get("/creators/{idCreador}/pay", ["as" => "payCreator", "uses" => "CallbackController@createPayment"]);
+    $router->get("/creators/{idCreador}/pay/", ["as" => "payCreator", "uses" => "CallbackController@createPayment"]);
+    $router->get("/creators/{idCreador}/donate/{monto}", ["as" => "payCreator", "uses" => "CallbackController@donate"]);
     $router->post("/posts/like/{idPost}/{idUser}", ["as" => "likePost", "uses" => "PostController@likePost"]);
     $router->post("/posts/unlike/{idPost}/{idUser}", ["as" => "likePost", "uses" => "PostController@removeLikePost"]);
+    $router->post("/creator/makeVip/{idCreador}", ["as" => "makeVip", "uses" => "CallbackController@makeVip"]);
+    $router->post("/creator/removeVip/", ["as" => "removeVip", "uses" => "CallbackController@removeVip"]);
 });
 //Muestra todos los Posts de un creator
 $router->get("/postscreator/{creator_id}", "CreatorController@showPostsCreator");
