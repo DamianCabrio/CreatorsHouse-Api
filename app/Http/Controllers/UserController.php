@@ -140,7 +140,7 @@ class UserController extends Controller
 
     public function me(Request $request)
     {
-        return $this->successResponse($request->user());
+        return $this->successResponse($request->user(),200);
     }
 
     public function verify($token)
